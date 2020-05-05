@@ -1,0 +1,99 @@
+#! /bin/bash
+
+version="$(basename "$0") 0.1"
+usage="$(basename "$0") [-h] [-l lines] [-s separator] [-p list path] [-v program]"
+
+while getopts ':hv:l:s:p:' option; do
+    case "$option" in
+        h) printf "$usage\n"
+           exit 1
+           ;;
+        v) VIEWER=$OPTARG
+           #printf "$VIEWER\n"
+           ;;
+        l) NLINES=$OPTARG
+           #printf "$NLINES\n"
+           ;;
+        s) SEPARATOR=$OPTARG
+           #printf "$SEPARATOR\n"
+           ;;
+        p) LIST_PATH=$OPTARG
+           #printf "$LIST_PATH\n"
+           ;;
+
+        :) printf "missing arguments for -%s\n" "$OPTARG" >&2
+           printf "$usage" >&2
+           exit 1
+           ;;
+        ?) printf "illegal option: -%s\n" "$OPTARG" >&2
+            printf "$usage" >&2
+            exit 1
+            ;;
+    esac
+done
+
+shift $((OPTIND -1))
+
+if [ -z $SEPARATOR ] ; then
+    printf "Separator set to default(:)\n"
+    SEPARATOR=':'
+fi
+
+if [ -z "$VIEWER" ] ; then
+    printf "$0 defaults to \$EDITOR($EDITOR) since no viewer was specified\n" >&2
+    if [ -z $EDITOR ] ; then
+        printf "Variable \$EDITOR not set exiting\n" >&2
+        exit 1
+    else
+        VIEWER=$EDITOR
+    fi
+fi
+
+if [ ${LIST_PATH+x} ] ; then
+
+    ext=${LIST_PATH##*.}
+    url=$(sed "s/$SEPARATOR.*//" $LIST_PATH | dmenu -p $(basename $LIST_PATH .$ext) | xargs -I % grep "%$SEPARATOR" "$LIST_PATH" | sed "s/.*$SEPARATOR//")
+
+    if [ ${NLINES+x} ] ; then
+        url=$(sed "s/$SEPARATOR.*//" $LIST_PATH | dmenu -p $(basename $LIST_PATH .$ext) -l $NLINES | xargs -I % grep "%$SEPARATOR" "$LIST_PATH" | sed "s/.*$SEPARATOR//")
+    fi
+
+else
+    printf "list file not found (%s)\n" "$LIST_PATH" >&2
+    exit 1
+fi
+
+filesystem() {
+    if [[ "$url" == *"~/"* ]] ; then
+        path="$HOME/$(printf $url | sed "s/~\///")"
+    else
+        path=$url
+    fi
+
+    case "$VIEWER" in
+        termite*)
+            PROG="$(printf "$VIEWER" | sed "s/termite -e //")"
+            T="termite -e"
+            $T "$PROG $path"
+            ;;
+        urxvt*|st*) $VIEWER $path
+            ;;
+        *) $VIEWER $path
+            ;;
+    esac
+}
+
+website() {
+    $VIEWER $url
+}
+
+if [ -z $url ] ; then
+    printf "Empty url !!"
+    exit 1
+else
+    case "$url" in
+        ~\/*|\/*) filesystem ;;
+        *) website ;;
+    esac
+fi
+

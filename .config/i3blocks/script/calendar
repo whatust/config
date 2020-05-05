@@ -1,0 +1,9 @@
+#!/bin/sh
+
+DATEFMT=${DATEFMT:-"+%a, %d %m %Y %H:%M"}
+
+case "$BLOCK_BUTTON" in
+  1) urxvt -e calcurse
+esac
+
+echo "$(date "$DATEFMT")"

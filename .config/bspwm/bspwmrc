@@ -1,0 +1,24 @@
+#!/bin/sh
+
+bspc config border_width        2
+bspc config window_gap          6
+bspc config top_padding         24
+bspc config bottom_padding      0
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config normal_border_color "#1B2b34"
+bspc config focused_border_color "#FF7400"
+bspc config urgent_border_color "#8D0007"
+
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+
+bspc rule -a VirtualBox\ Manager state=floating sticky=on hidden=on center=on
+bspc rule -a ncmpcpp state=floating sticky=on hidden=on center=on
+bspc rule -a Qalculate-gtk state=floating sticky=on hidden=on center=on
+bspc rule -a Cherrytree desktop=^10
+bspc rule -a dropdown_t state=floating sticky=on hidden=on center=on
+
+$HOME/.config/bspwm/autostart.sh

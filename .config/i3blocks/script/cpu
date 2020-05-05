@@ -1,0 +1,13 @@
+#!/bin/sh
+#~/.config/i3/script/cpu
+
+total=100
+
+idle=$(mpstat | awk '/all/ {print $12}')
+set -- $idle
+unit=${1%,*}
+usage=$(("$total - $unit"))
+temp=$(sensors | awk '/Core 0/ {print $3}')
+temp=${temp#+}
+echo "$usage% ($temp)"
+

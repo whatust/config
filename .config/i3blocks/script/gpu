@@ -1,0 +1,10 @@
+#!/bin/sh
+
+gpu_query=$(nvidia-smi --query-gpu=utilization.gpu,temperature.gpu,memory.used,memory.total --format=csv)
+gpu_query=${gpu_query#utilization.gpu [[]'%'[]], temperature.gpu, memory.used [[]MiB[]], memory.total [[]MiB[]]}
+set -- $gpu_query
+utilization=${1%,*}
+temp=${3%,*}
+used_memory=${4%,*}
+total_memory=${6%,*}
+echo "$utilization% $used_memory""MB/$total_memory""MB ($temp°C)"

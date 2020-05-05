@@ -1,0 +1,85 @@
+#!/usr/bin/perl
+
+use Env qw(BLOCK_INSTANCE);
+
+my $MP="cmus";
+
+sub mpd_buttons {
+  if ($ENV{'BLOCK_BUTTON'} == 1){
+    system("mpc prev");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 2){
+    system("mpc toggle");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
+    system("mpc next");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 4) {
+    system("mpc volume +3");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 5) {
+    system("mpc volume -3");
+  }
+}
+
+sub cmus_buttons {
+  if ($ENV{'BLOCK_BUTTON'} == 1){
+    system("cmus-remote -r");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 2){
+    system("cmus-remote -u");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
+    system("cmus-remote -n");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 4) {
+    system("cmus-remote -v +3000");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 5) {
+    system("cmus-remote -v -3000");
+  }
+}
+
+sub mpd {
+  mpd_buttons();
+  my $data = qx(mpc current);
+  if (not $data eq '') {
+    print($LABEL.$data);
+    exit 0;
+  }else{
+    print($LABEL."Paused");
+    exit 0;
+  }
+}
+
+sub cmus {
+  cmus_buttons();
+  my $data = qx(cmus-remote -Q);
+  my @data = split /^/, $data;
+
+  foreach my $line (@data) {
+
+    my @line = split /\s/, $line;
+    my $tag = shift @line;
+
+    if ($tag eq "status") {
+
+      my $status = shift @line;
+      if (not $status eq "playing") {
+        print($LABEL."Paused");
+        exit 0;
+      }
+
+    }elsif ($tag eq "tag") {
+
+      my $key = shift @line;
+      my $value = join ' ', @line;
+
+      @metadata[0] = $value if $key eq 'artist';
+      @metadata[1] = $value if $key eq 'title';
+    }
+  }
+  print($LABEL.join " - ", @metadata);
+  exit 0;
+}
+
+
+if ($MP eq "mpd"){
+  mpd;
+}elsif ($MP eq "cmus"){
+  cmus;
+}
+
+print("$MP/n")

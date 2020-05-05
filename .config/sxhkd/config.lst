@@ -1,0 +1,14 @@
+bashrc:~/.bashrc
+nvimrc:~/.config/nvim/init.vim
+tmux:~/.tmux.conf
+sxhkd:~/.config/sxhkd/sxhkdrc
+termite:~/.config/termite/config
+vifm:~/.config/vifmrc
+polybar:~/.config/polybar/config
+aliases:~/.config/aliases
+bspwm:~/.config/bspwm/bspwmrc
+i3blocks:~/.config/i3blocks/config
+i3:~/.i3/config
+git:~/.gitconfig
+zshrc:~/.config/zsh/.zshrc
+

@@ -1,0 +1,12 @@
+#!/bin/sh
+#~/.config/i3/script/disk
+
+disk_info=$(df -h -P '/home' | awk '/dev/sdb1 {print $4 ";" $5}')
+disk_info=${disk_info#Avail;Use%}
+set -- $disk_info
+free=${1%;*}
+used=${1#*;}
+used=${used%\%}
+used=$((100-$used))
+echo "$free""B($used%)"
+

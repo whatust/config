@@ -1,0 +1,25 @@
+[user]
+    email = whatust@gmail.com
+    name = whatust
+
+[color "status"]
+    changed = yellow bold
+    added = green bold
+    untracked = red bold
+    branch = magenta bold
+    nobranch = red bold
+
+[color "log"]
+    header = yellow
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "branch"]
+    current = blue bold
+    local = green bold
+    remote = magenta bold
+

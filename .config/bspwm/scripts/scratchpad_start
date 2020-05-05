@@ -1,0 +1,11 @@
+#!/bin/sh
+
+pkill mpd
+pkill termite
+pkill qalculate-gtk
+
+mpd $HOME/.config/mpd/mpd.conf &
+termite --title=ncmpcpp --class=ncmpcpp --name=ncmpcpp -e ncmpcpp &
+termite --title=dropdown_t --class=dropdown_t --name=dropdown_t -e tmux &
+qalculate-gtk &
+

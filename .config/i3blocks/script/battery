@@ -1,0 +1,10 @@
+#!/bin/sh
+
+info=$(acpi | awk -F '[, ]' '/Battery 0:/ {print $3 ";" $5 ";" $7}')
+IFS=";"
+set -- $info
+mode=${1%;*}
+battery=${2%;*}
+time=${3%;*}
+echo "$mode $battery($time)"
+

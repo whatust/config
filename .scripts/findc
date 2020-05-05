@@ -1,0 +1,2 @@
+find . -name '*.[ch]' | xargs egrep -n "$1";
+

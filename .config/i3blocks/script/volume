@@ -1,0 +1,31 @@
+#!/usr/bin/perl
+
+use Env qw(BLOCK_INSTANCE);
+
+my $string;
+my $volumel;
+
+sub buttons {
+  if ($ENV{'BLOCK_BUTTON'} == 1){
+    system("urxvt -e pulsemixer");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 2){
+    system("pulsemixer --toggle-mute");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 4) {
+    system("pulsemixer --change-volume +3");
+  } elsif ($ENV{'BLOCK_BUTTON'} == 5) {
+    system("pulsemixer --change-volume -3");
+  }
+}
+
+buttons();
+$volume = qx(pulsemixer --get-volume 2>/dev/null);
+$volume = int($volume);
+
+if (qx(pulsemixer --get-mute 2>/dev/null) == 1){
+  $string = "MUTE";
+}else{
+  $string = "VOL ";
+}
+
+printf("%s%3d", $string, $volume);
+print("\n");

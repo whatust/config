@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# xinitrc runs at when startx executes
+
+# executes xprofile to start some daemon programs
+[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile" ] && . "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile"
+
+# start window manager
+bspwm
+

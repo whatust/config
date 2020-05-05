@@ -1,0 +1,10 @@
+function _compl_copy_from_to_liv_(){
+  case $COMP_CWORD in
+    1) COMPREPLY=($(compgen -W "babbage bezier minsky phong prim voronoi" ${COMP_WORDS[COMP_CWORD]}));;
+    *) COMPREPLY=();;
+  esac
+}
+complete -F _compl_copy_from_to_liv_ login_liv
+complete -o default -F _compl_copy_from_to_liv_ copy_to_liv
+complete -o default -F _compl_copy_from_to_liv_ copy_from_liv
+complete -o default -F _compl_copy_from_to_liv_ copy_results

@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+export EDITOR="nvim"
+export BROWSER="firefox"
+export TERMINAL="xterm"
+export REASDER="zathura"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
+export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+
+export PATH="$PATH:$HOME/.scripts"
+export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/go/bin"
+
