@@ -25,6 +25,7 @@ Plug 'preservim/nerdcommenter'          " Comment Assistant
 Plug 'airblade/vim-gitgutter'           " Adds git diff marks
 Plug 'terryma/vim-multiple-cursors'     " Adds multiple cursors
 Plug 'vim-pandoc/vim-pandoc-syntax'     " Adds pandoc syntaxhiligth
+Plug 'vimwiki/vimwiki'                  " Personal wiki for vim
 call plug#end()
 filetype plugin indent on
 
