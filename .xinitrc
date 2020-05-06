@@ -1,1 +1,1 @@
-.config/.xinitrc
+.config/xinitrc
