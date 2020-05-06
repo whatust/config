@@ -16,6 +16,12 @@ export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 
+export PATH="$PATH:/bin"
+export PATH="$PATH:/sbin"
+export PATH="$PATH:usr/bin"
+export PATH="$PATH:usr/sbin"
+export PATH="$PATH:usr/local/bin"
+export PATH="$PATH:usr/local/sbin"
 export PATH="$PATH:$HOME/.scripts"
-export PATH="${XDG_DATA_HOME:-$HOME/.local/share}/go/bin"
+export PATH="$PATH:$GOPATH/.local/share}/go/bin"
 
