@@ -3,28 +3,29 @@ set nocompatible
 filetype off
 
 " Set runtimepath to include Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
-Plugin 'christoomey/vim-tmux-navigator' " Vim tmux shotcuts
-Plugin 'mhartington/oceanic-next'		" Vim colorschme needs true colors
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/base16-vim'
-Plugin 'vim-airline/vim-airline'		" Status tabline
-Plugin 'vim-airline/vim-airline-themes'	" Status tabline them
-Plugin 'tpope/vim-fugitive'             " Git commands from within vim
-Plugin 'benmills/vimux'                 " Open prompt and run tests
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'junegunn/fzf.vim'               " Fuzzyfinder
-Plugin 'scrooloose/nerdtree'            " Treed directory navigator
-Plugin 'Xuyuanp/nerdtree-git-plugin'    " Show git status on NerdTreen
-Plugin 'vim-perl/vim-perl'              " Syntax highlight for perl language
+call plug#begin()
+Plug 'christoomey/vim-tmux-navigator'   " Vim tmux shotcuts
+Plug 'mhartington/oceanic-next'		" Vim colorschme needs true colors
+Plug 'vim-airline/vim-airline'		" Status tabline
+Plug 'vim-airline/vim-airline-themes'	" Status tabline them
+Plug 'tpope/vim-fugitive'               " Git commands from within vim
+Plug 'benmills/vimux'                   " Open prompt and run tests
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'                 " Fuzzyfinder
+Plug 'scrooloose/nerdtree'              " Treed directory navigator
+Plug 'Xuyuanp/nerdtree-git-plugin'      " Show git status on NerdTreen
+Plug 'vim-perl/vim-perl'                " Syntax highlight for perl language
 "Plugin 'neoclide/coc.nvim', {'branch': 'release'}
-Plugin 'preservim/nerdcommenter'        " Comment block of code
-Plugin 'ryanoasis/vim-devicons'         " Add icons to nerdtree
-
-
-call vundle#end()
+Plug 'preservim/nerdcommenter'          " Comment block of code
+Plug 'ryanoasis/vim-devicons'           " Add icons to nerdtree
+Plug 'Glench/Vim-Jinja2-Syntax'         " Adds syntax hilight for Jinja2
+Plug 'vim-python/python-syntax'         " Improves python syntax highlight
+Plug 'preservim/nerdcommenter'          " Comment Assistant
+Plug 'airblade/vim-gitgutter'           " Adds git diff marks
+Plug 'terryma/vim-multiple-cursors'     " Adds multiple cursors
+Plug 'vim-pandoc/vim-pandoc-syntax'     " Adds pandoc syntaxhiligth
+call plug#end()
 filetype plugin indent on
 
 syntax enable
