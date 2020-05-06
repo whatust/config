@@ -10,7 +10,7 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: alacritty
+  TERM: xterm-256color
 
 window:
   title: Alacritty
@@ -53,10 +53,10 @@ font:
 colors:
 
   primary:
-    background: '#ffffff'
-    foreground: '#eaeaea'
-    dim_foreground: '#9a9a9a'
-    bright_foreground: '#ffffff'
+    background: '#1b2b34'
+    foreground: '#f8f8f2'
+    dim_foreground: '#f8f8f2'
+    bright_foreground: '#f8f8f2'
 
   cursor:
     text: '#000000'
@@ -77,35 +77,35 @@ colors:
     yellow:  '#ff7400'
     blue:    '#064480'
     magenta: '#863c86'
-    cyan:    '#a7adba'
-    white:   '#f8f8f2'
+    cyan:    '#0f6868'
+    white:   '#a7adba'
 
   bright:
-    black:   '#666666'
-    red:     '#ff3334'
-    green:   '#9ec400'
-    yellow:  '#e7c547'
-    blue:    '#7aa6da'
-    magenta: '#b77ee0'
+    black:   '#4f5b66'
+    red:     '#ec5f67'
+    green:   '#99c794'
+    yellow:  '#fac663'
+    blue:    '#6699cc'
+    magenta: '#c594c5'
     cyan:    '#54ced6'
-    white:   '#ffffff'
+    white:   '#d8d339'
 
   dim:
-    black:   '#000000'
-    red:     '#8c3336'
-    green:   '#7a8530'
-    yellow:  '#97822e'
-    blue:    '#506d8f'
-    magenta: '#80638e'
-    cyan:    '#497e7a'
-    white:   '#9a9a9a'
+    black:   '#1B2B34'
+    red:     '#8D0007'
+    green:   '#27731f'
+    yellow:  '#ff7400'
+    blue:    '#064480'
+    magenta: '#863c86'
+    cyan:    '#0f6868'
+    white:   '#a7adba'
 
 background_opacity: 0.9
 
 # Allow terminal applications to change Alacritty's window title.
 dynamic_title: true
 
-#cursor:
+cursor:
   style: Block
   vi_mode_style: Beam
   unfocused_hollow: true
@@ -117,8 +117,8 @@ dynamic_title: true
 live_config_reload: true
 
 shell:
-  program: /bin/zsh
-  args:
+  program: /usr/bin/tmux
+  args: -u
 
 # Starting directory
 working_directory: None
@@ -139,67 +139,9 @@ mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
 key_bindings:
-  - { key: Paste,                                action: Paste          }
-  - { key: Copy,                                 action: Copy           }
-  #- { key: L,         mods: Control,             action: ClearLogNotice }
-  #- { key: L,         mods: Control, mode: ~Vi,  chars: "\x0c"          }
-  #- { key: PageUp,    mods: Shift,   mode: ~Alt, action: ScrollPageUp,  }
-  #- { key: PageDown,  mods: Shift,   mode: ~Alt, action: ScrollPageDown }
-  #- { key: Home,      mods: Shift,   mode: ~Alt, action: ScrollToTop,   }
-  #- { key: End,       mods: Shift,   mode: ~Alt, action: ScrollToBottom }
-
-  # Vi Mode
-  - { key: Space,  mods: Shift|Control, mode: Vi, action: ScrollToBottom          }
-  - { key: Space,  mods: Shift|Control,           action: ToggleViMode            }
-  #- { key: Escape,                      mode: Vi, action: ClearSelection          }
-  - { key: I,                           mode: Vi, action: ScrollToBottom          }
-  - { key: I,                           mode: Vi, action: ToggleViMode            }
-  - { key: A,                           mode: Vi, action: ScrollToBottom          }
-  - { key: A,                           mode: Vi, action: ToggleViMode            }
-  #- { key: Y,      mods: Control,       mode: Vi, action: ScrollLineUp            }
-  #- { key: E,      mods: Control,       mode: Vi, action: ScrollLineDown          }
-  - { key: G,                           mode: Vi, action: ScrollToTop             }
-  - { key: G,      mods: Shift,         mode: Vi, action: ScrollToBottom          }
-  - { key: B,      mods: Control,       mode: Vi, action: ScrollPageUp            }
-  - { key: F,      mods: Control,       mode: Vi, action: ScrollPageDown          }
-  - { key: U,      mods: Control,       mode: Vi, action: ScrollHalfPageUp        }
-  - { key: D,      mods: Control,       mode: Vi, action: ScrollHalfPageDown      }
-  - { key: Y,                           mode: Vi, action: Copy                    }
-  - { key: Y,                           mode: Vi, action: ClearSelection          }
-  - { key: Copy,                        mode: Vi, action: ClearSelection          }
-  - { key: V,                           mode: Vi, action: ToggleNormalSelection   }
-  - { key: V,      mods: Shift,         mode: Vi, action: ToggleLineSelection     }
-  - { key: V,      mods: Control,       mode: Vi, action: ToggleBlockSelection    }
-  - { key: V,      mods: Alt,           mode: Vi, action: ToggleSemanticSelection }
-  #- { key: Return,                      mode: Vi, action: Open                    }
-  - { key: K,                           mode: Vi, action: Up                      }
-  - { key: J,                           mode: Vi, action: Down                    }
-  - { key: H,                           mode: Vi, action: Left                    }
-  - { key: L,                           mode: Vi, action: Right                   }
-  - { key: Up,                          mode: Vi, action: Up                      }
-  - { key: Down,                        mode: Vi, action: Down                    }
-  - { key: Left,                        mode: Vi, action: Left                    }
-  - { key: Right,                       mode: Vi, action: Right                   }
-  #- { key: Key0,                        mode: Vi, action: First                   }
-  #- { key: Key4,   mods: Shift,         mode: Vi, action: Last                    }
-  #- { key: Key6,   mods: Shift,         mode: Vi, action: FirstOccupied           }
-  #- { key: H,      mods: Shift,         mode: Vi, action: High                    }
-  #- { key: M,      mods: Shift,         mode: Vi, action: Middle                  }
-  #- { key: L,      mods: Shift,         mode: Vi, action: Low                     }
-  - { key: B,                           mode: Vi, action: SemanticLeft            }
-  - { key: W,                           mode: Vi, action: SemanticRight           }
-  - { key: E,                           mode: Vi, action: SemanticRightEnd        }
-  - { key: B,      mods: Shift,         mode: Vi, action: WordLeft                }
-  - { key: W,      mods: Shift,         mode: Vi, action: WordRight               }
-  - { key: E,      mods: Shift,         mode: Vi, action: WordRightEnd            }
-  - { key: Key5,   mods: Shift,         mode: Vi, action: Bracket                 }
-
-  # (Windows, Linux, and BSD only)
   - { key: V,        mods: Control|Shift,           action: Paste            }
   - { key: C,        mods: Control|Shift,           action: Copy             }
-  - { key: C,        mods: Control|Shift, mode: Vi, action: ClearSelection   }
-  #- { key: Insert,   mods: Shift,                   action: PasteSelection   }
-  #- { key: Key0,     mods: Control,                 action: ResetFontSize    }
+  - { key: Key0,     mods: Control,                 action: ResetFontSize    }
   - { key: Equals,   mods: Control,                 action: IncreaseFontSize }
   - { key: Add,      mods: Control,                 action: IncreaseFontSize }
   - { key: Subtract, mods: Control,                 action: DecreaseFontSize }
