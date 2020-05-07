@@ -118,7 +118,8 @@ live_config_reload: true
 
 shell:
   program: /usr/bin/tmux
-  args: -u
+  args:
+    - -u
 
 # Starting directory
 working_directory: None

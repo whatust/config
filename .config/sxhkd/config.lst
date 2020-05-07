@@ -1,14 +1,16 @@
-bashrc:~/.bashrc
+zprofile~/.zprofile
+zshrc~/.config/zsh/.zshrc
 nvimrc:~/.config/nvim/init.vim
-tmux:~/.tmux.conf
+tmux:~/.config/tmux/tmux.conf
 sxhkd:~/.config/sxhkd/sxhkdrc
 termite:~/.config/termite/config
 vifm:~/.config/vifmrc
 polybar:~/.config/polybar/config
-aliases:~/.config/aliases
+aliases:~/.config/aliases/aliases
 bspwm:~/.config/bspwm/bspwmrc
 i3blocks:~/.config/i3blocks/config
-i3:~/.i3/config
-git:~/.gitconfig
+i3:~/.config/i3/config
+git:~/.config/git/config
 zshrc:~/.config/zsh/.zshrc
+alacritty:~/.config/alacritty/alacritty.yml
 

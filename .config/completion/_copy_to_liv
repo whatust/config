@@ -1,7 +1,0 @@
-#compdef _copy_to_liv copy_to_liv
-
-function _copy_to_liv {
-	_arguments\
-		'1:host:(ada bezier babbage minsky prim phong voronoi)' \
-		'2:filename:_files'
-	}

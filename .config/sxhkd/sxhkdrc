@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-    termite -e tmux
+    alacritty -e tmux
 
 # program launcher
 super + @space
@@ -42,7 +42,7 @@ super + x
     bspc node -c
 
 super + c
-    ~/.scripts/indexmenu -s ':' -p ~/.config/sxhkd/config.lst -v "termite -e nvim"
+    ~/.scripts/indexmenu -s ':' -p ~/.config/sxhkd/config.lst -v "alacritty -e nvim"
 
 super + shift + b
     ~/.scripts/indexmenu -s ':' -p ~/.config/sxhkd/bookmark.lst -v "brave"

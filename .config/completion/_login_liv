@@ -1,6 +1,0 @@
-#compdef _login_liv login_liv
-
-function _login_liv {
-	_arguments \
-		'1:custom arg:(ada bezier babbage minsky prim phong voronoi)'
-	}

@@ -10,8 +10,7 @@ SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 
 #  Aliases and custom completions.
-[ -f $HOME/.config/aliases ] && source $HOME/.config/aliases
-[ -f $HOME/.config/completion ] && source $HOME/.config/completion
+[ -d $HOME/.config/aliases ] && source $HOME/.config/aliases/aliases
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -46,7 +45,7 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 
 # Spaceship config
 SPACESHIP_PROMPT_ORDER=(
-    time
+#    time
     user
     host
     dir
@@ -144,3 +143,5 @@ ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
