@@ -1,0 +1,42 @@
+# -- Feed ----------------------------------------------------------------------
+ 
+auto-reload yes
+reload-time 300
+reload-threads 4
+download-retries 5
+download-timeout 10
+prepopulate-query-feeds yes
+ 
+# -- Navigation ----------------------------------------------------------------
+ 
+goto-next-feed no
+ 
+browser "brave-browser %u"
+ 
+bind-key j down feedlist
+bind-key k up feedlist
+bind-key l open feedlist
+ 
+bind-key j down articlelist
+bind-key k up articlelist
+bind-key l open articlelist
+bind-key h quit articlelist
+bind-key J next articlelist
+bind-key K prev articlelist
+ 
+bind-key j down article
+bind-key k up article
+bind-key h quit article
+bind-key J next article
+bind-key K prev article
+ 
+# -- Display ----------------------------------------------------------------
+ 
+show-read-feeds no
+feed-sort-order unreadarticlecount-asc
+ 
+color info default default reverse
+color listnormal_unread yellow default
+color listfocus blue default reverse bold
+color listfocus_unread blue default reverse bold
+

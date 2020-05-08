@@ -31,7 +31,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # Add hidden files to fzf
-export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l --follow "!.git/*"'
 
 # Add color for man pages
 export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
@@ -71,19 +71,19 @@ SPACESHIP_TIME_12HR=true
 SPACESHIP_USER_SHOW=always
 SPACESHIP_USER_PREFIX=""
 SPACESHIP_USER_SUFFIX=""
-SPACESHIP_USER_COLOR="cyan"
+SPACESHIP_USER_COLOR="14"
 SPACESHIP_HOST_SHOW=always
 SPACESHIP_HOST_PREFIX="@"
 SPACESHIP_HOST_SUFFIX=""
-SPACESHIP_HOST_COLOR="cyan"
+SPACESHIP_HOST_COLOR="14"
 SPACESHIP_DIR_SHOW=true
 SPACESHIP_DIR_PREFIX=":"
 SPACESHIP_DIR_SUFFIX=""
 SPACESHIP_DIR_TRUNC=3
 SPACESHIP_DIR_TRUNC_PREFIX="-"
-SPACESHIP_DIR_COLOR="yellow"
+SPACESHIP_DIR_COLOR="13"
 SPACESHIP_GIT_PREFIX=""
-SPACESHIP_GIT_BRANCH_COLOR="magenta"
+SPACESHIP_GIT_BRANCH_COLOR="12"
 SPACESHIP_EXEC_TIME_SHOW=true
 SPACESHIP_EXEC_TIME_PREFIX="("
 SPACESHIP_EXEC_TIME_SUFFIX=") "
@@ -126,22 +126,6 @@ prompt spaceship
 # Load you-should-use
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
-# Custom color highlight
-typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[command]='fg=green,bold'
-ZSH_HIGHLIGHT_STYLES[function]='fg=green,bold'
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=green,bold'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=green,bold'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=green,bold'
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=yellow,bold'
-ZSH_HIGHLIGHT_STYLES[uknown-token]='fg=red,bold'
-ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=magenta,bold'
-ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=magenta,bold'
-ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=blue,bold'
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'
-
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

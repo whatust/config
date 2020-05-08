@@ -26,19 +26,19 @@ scrolling:
 font:
 
   normal:
-    family: monospace
+    family: Inconsolata
     style: Regular
 
   bold:
-    family: monospace
+    family: Inconsolata
     style: Bold
 
   italic:
-    family: monospace
+    family: Inconsolata
     style: Italic
 
   bold_italic:
-    family: monospace
+    family: Inconsolata
     style: Bold Italic
 
   size: 10.0
@@ -53,52 +53,50 @@ font:
 colors:
 
   primary:
-    background: '#1b2b34'
-    foreground: '#f8f8f2'
-    dim_foreground: '#f8f8f2'
-    bright_foreground: '#f8f8f2'
+    background: '#1d2021'
+    foreground: '#f8f8f8'
 
   cursor:
     text: '#000000'
-    cursor: '#ffffff'
+    cursor: '#f8f8f8'
 
   vi_mode_cursor:
     text: '#000000'
-    cursor: '#ffffff'
+    cursor: '#dc00dc'
 
   selection:
-   text: '#f8f8f2'
-   background: '#1B2B34'
+   text: '#f8f8f8'
+   background: '#000000'
 
   normal:
-    black:   '#1B2B34'
-    red:     '#8D0007'
-    green:   '#27731f'
+    black:   '#1d2021'
+    red:     '#cc0000'
+    green:   '#73d216'
     yellow:  '#ff7400'
-    blue:    '#064480'
-    magenta: '#863c86'
+    blue:    '#204a87'
+    magenta: '#5c3566'
     cyan:    '#0f6868'
-    white:   '#a7adba'
+    white:   '#a7adad'
 
   bright:
-    black:   '#4f5b66'
+    black:   '#555555'
     red:     '#ec5f67'
     green:   '#99c794'
     yellow:  '#fac663'
     blue:    '#6699cc'
     magenta: '#c594c5'
     cyan:    '#54ced6'
-    white:   '#d8d339'
+    white:   '#dddddd'
 
   dim:
-    black:   '#1B2B34'
-    red:     '#8D0007'
-    green:   '#27731f'
+    black:   '#1d2021'
+    red:     '#cc0000'
+    green:   '#73d216'
     yellow:  '#ff7400'
-    blue:    '#064480'
-    magenta: '#863c86'
+    blue:    '#204a87'
+    magenta: '#5c3566'
     cyan:    '#0f6868'
-    white:   '#a7adba'
+    white:   '#a7adad'
 
 background_opacity: 0.9
 
@@ -148,158 +146,3 @@ key_bindings:
   - { key: Subtract, mods: Control,                 action: DecreaseFontSize }
   - { key: Minus,    mods: Control,                 action: DecreaseFontSize }
 
-#debug:
-  # Display the time it takes to redraw each frame.
-  #render_timer: false
-
-  # Keep the log file after quitting Alacritty.
-  #persistent_logging: false
-
-  # Log level
-  #
-  # Values for `log_level`:
-  #   - None
-  #   - Error
-  #   - Warn
-  #   - Info
-  #   - Debug
-  #   - Trace
-  #log_level: Warn
-
-  # Print all received window events.
-  #print_events: false
-
-# Key bindings
-#
-# Key bindings are specified as a list of objects. For example, this is the
-# default paste binding:
-#
-# `- { key: V, mods: Control|Shift, action: Paste }`
-#
-# Each key binding will specify a:
-#
-# - `key`: Identifier of the key pressed
-#
-#    - A-Z
-#    - F1-F24
-#    - Key0-Key9
-#
-#    A full list with available key codes can be found here:
-#    https://docs.rs/glutin/*/glutin/event/enum.VirtualKeyCode.html#variants
-#
-#    Instead of using the name of the keys, the `key` field also supports using
-#    the scancode of the desired key. Scancodes have to be specified as a
-#    decimal number. This command will allow you to display the hex scancodes
-#    for certain keys:
-#
-#       `showkey --scancodes`.
-#
-# Then exactly one of:
-#
-# - `chars`: Send a byte sequence to the running application
-#
-#    The `chars` field writes the specified string to the terminal. This makes
-#    it possible to pass escape sequences. To find escape codes for bindings
-#    like `PageUp` (`"\x1b[5~"`), you can run the command `showkey -a` outside
-#    of tmux. Note that applications use terminfo to map escape sequences back
-#    to keys. It is therefore required to update the terminfo when changing an
-#    escape sequence.
-#
-# - `action`: Execute a predefined action
-#
-#   - ToggleViMode
-#   - Copy
-#   - Paste
-#   - PasteSelection
-#   - IncreaseFontSize
-#   - DecreaseFontSize
-#   - ResetFontSize
-#   - ScrollPageUp
-#   - ScrollPageDown
-#   - ScrollLineUp
-#   - ScrollLineDown
-#   - ScrollToTop
-#   - ScrollToBottom
-#   - ClearHistory
-#   - Hide
-#   - Minimize
-#   - Quit
-#   - ToggleFullscreen
-#   - SpawnNewInstance
-#   - ClearLogNotice
-#   - ClearSelection
-#   - ReceiveChar
-#   - None
-#
-#   (`mode: Vi` only):
-#   - Open
-#   - Up
-#   - Down
-#   - Left
-#   - Right
-#   - First
-#   - Last
-#   - FirstOccupied
-#   - High
-#   - Middle
-#   - Low
-#   - SemanticLeft
-#   - SemanticRight
-#   - SemanticLeftEnd
-#   - SemanticRightEnd
-#   - WordRight
-#   - WordLeft
-#   - WordRightEnd
-#   - WordLeftEnd
-#   - Bracket
-#   - ToggleNormalSelection
-#   - ToggleLineSelection
-#   - ToggleBlockSelection
-#   - ToggleSemanticSelection
-#
-#   (macOS only):
-#   - ToggleSimpleFullscreen: Enters fullscreen without occupying another space
-#
-#   (Linux/BSD only):
-#   - CopySelection: Copies into selection buffer
-#
-# - `command`: Fork and execute a specified command plus arguments
-#
-#    The `command` field must be a map containing a `program` string and an
-#    `args` array of command line parameter strings. For example:
-#       `{ program: "alacritty", args: ["-e", "vttest"] }`
-#
-# And optionally:
-#
-# - `mods`: Key modifiers to filter binding actions
-#
-#    - Command
-#    - Control
-#    - Option
-#    - Super
-#    - Shift
-#    - Alt
-#
-#    Multiple `mods` can be combined using `|` like this:
-#       `mods: Control|Shift`.
-#    Whitespace and capitalization are relevant and must match the example.
-#
-# - `mode`: Indicate a binding for only specific terminal reported modes
-#
-#    This is mainly used to send applications the correct escape sequences
-#    when in different modes.
-#
-#    - AppCursor
-#    - AppKeypad
-#    - Alt
-#
-#    A `~` operator can be used before a mode to apply the binding whenever
-#    the mode is *not* active, e.g. `~Alt`.
-#
-# Bindings are always filled by default, but will be replaced when a new
-# binding with the same triggers is defined. To unset a default binding, it can
-# be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
-# a no-op if you do not wish to receive input characters for that binding.
-#
-# If the same trigger is assigned to multiple actions, all of them are executed
-# at once.
