@@ -37,7 +37,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal \
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias cmus='termite -name cmus -e cmus & > /dev/null'
 alias neomutt='neomutt -F $HOME/.config/mutt/muttrc'
+alias vim='nvim'
 #alias tmux='tmux -f $HOME/.config/tmux/.tmux.conf'
 
-alias bookworm='com.github.babluboy.bookworm'
+# alias bookworm='com.github.babluboy.bookworm'
 

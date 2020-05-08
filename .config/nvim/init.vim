@@ -6,8 +6,7 @@ filetype off
 
 call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'   " Vim tmux shotcuts
-Plug 'mhartington/oceanic-next'		" Vim colorschme needs true colors
-Plug 'vim-airline/vim-airline'		" Status tabline
+Plug 'vim-airline/vim-airline'		    " Status tabline
 Plug 'vim-airline/vim-airline-themes'	" Status tabline them
 Plug 'tpope/vim-fugitive'               " Git commands from within vim
 Plug 'benmills/vimux'                   " Open prompt and run tests
@@ -40,8 +39,8 @@ if exists('+termguicolors')
 endif
 
 " Syntax color scheme
-colorscheme one
-set background=dark
+colorscheme OceanicNext
+"set background=dark
 
 " Tabline theme
 let g:airline_theme='deus'
@@ -116,7 +115,7 @@ set nostartofline
 
 " Highlight cursor
 set cursorline
-hi CursorLine term=bold cterm=bold guibg=Grey40
+hi CursorLine term=bold cterm=bold " guibg=Grey40
 
 " Quickly time out on keycodes, remove timout on mappings
 set notimeout ttimeout ttimeoutlen=200

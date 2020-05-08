@@ -31,17 +31,15 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # Add hidden files to fzf
-export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l --follow "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 
-# Add color for man pages
-export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
-export LESS_TERMCAP_md=$'\e[1;33m'     # begin blink
-export LESS_TERMCAP_so=$'\e[01;44;37m' # begin reverse video
-export LESS_TERMCAP_us=$'\e[01;37m'    # begin underline
-export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
-export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
-export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
-export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
+export LESS_TERMCAP_mb=$(tput bold; tput setaf 13) # begin bold
+export LESS_TERMCAP_md=$(tput bold; tput setaf 12) # begin blink
+export LESS_TERMCAP_us=$(tput bold; tput setaf 14) # begin underline
+export LESS_TERMCAP_so=$(tput bold; tput setaf 11) # begin reverse video
+export LESS_TERMCAP_se=$(tput sgr0) # reset reverse video
+export LESS_TERMCAP_me=$(tput sgr0) # reset bold/blink
+export LESS_TERMCAP_ue=$(tput sgr0) # reset underline
 
 # Spaceship config
 SPACESHIP_PROMPT_ORDER=(
@@ -63,11 +61,11 @@ SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_PROMPT_DEFAULT_SUFFIX=" "
 SPACESHIP_CHAR_SYMBOL="$ "
 SPACESHIP_CHAR_SYMBOL_ROOT="# "
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_TIME_COLOR="green"
-SPACESHIP_TIME_PREFIX=""
-SPACESHIP_TIME_SUFFIX=""
-SPACESHIP_TIME_12HR=true
+#SPACESHIP_TIME_SHOW=true
+#SPACESHIP_TIME_COLOR="green"
+#SPACESHIP_TIME_PREFIX=""
+#SPACESHIP_TIME_SUFFIX=""
+#SPACESHIP_TIME_12HR=true
 SPACESHIP_USER_SHOW=always
 SPACESHIP_USER_PREFIX=""
 SPACESHIP_USER_SUFFIX=""
@@ -84,10 +82,10 @@ SPACESHIP_DIR_TRUNC_PREFIX="-"
 SPACESHIP_DIR_COLOR="13"
 SPACESHIP_GIT_PREFIX=""
 SPACESHIP_GIT_BRANCH_COLOR="12"
-SPACESHIP_EXEC_TIME_SHOW=true
-SPACESHIP_EXEC_TIME_PREFIX="("
-SPACESHIP_EXEC_TIME_SUFFIX=") "
-SPACESHIP_EXEC_TIME_COLOR="blue"
+#SPACESHIP_EXEC_TIME_SHOW=true
+#SPACESHIP_EXEC_TIME_PREFIX="("
+#SPACESHIP_EXEC_TIME_SUFFIX=") "
+#SPACESHIP_EXEC_TIME_COLOR="blue"
 SPACESHIP_JOBS_SHOW=true
 SPACESHIP_JOBS_PREFIX=""
 SPACESHIP_JOBS_SUFFIX=""

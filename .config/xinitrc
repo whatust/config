@@ -7,4 +7,5 @@
 
 # start window manager
 bspwm
+picom -CG &
 
