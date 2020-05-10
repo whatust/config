@@ -52,10 +52,10 @@ fi
 if [ ${LIST_PATH+x} ] ; then
 
     ext=${LIST_PATH##*.}
-    url=$(sed "s/$SEPARATOR.*//" $LIST_PATH | dmenu -p $(basename $LIST_PATH .$ext) -fn "Inconsolata-8" | xargs -I % grep "%$SEPARATOR" "$LIST_PATH" | sed "s/.*$SEPARATOR//")
+    url=$(sed "s/$SEPARATOR.*//" $LIST_PATH | dmenu -p $(basename $LIST_PATH .$ext) -fn "Source Code Pro-10" | xargs -I % grep "%$SEPARATOR" "$LIST_PATH" | sed "s/.*$SEPARATOR//")
 
     if [ ${NLINES+x} ] ; then
-        url=$(sed "s/$SEPARATOR.*//" $LIST_PATH | dmenu -p $(basename $LIST_PATH .$ext) -fn "Inconsolata-8" -l $NLINES | xargs -I % grep "%$SEPARATOR" "$LIST_PATH" | sed "s/.*$SEPARATOR//")
+        url=$(sed "s/$SEPARATOR.*//" $LIST_PATH | dmenu -p $(basename $LIST_PATH .$ext) -fn "Source Code Pro-10" -l $NLINES | xargs -I % grep "%$SEPARATOR" "$LIST_PATH" | sed "s/.*$SEPARATOR//")
     fi
 
 else

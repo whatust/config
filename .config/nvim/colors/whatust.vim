@@ -59,7 +59,9 @@ call <sid>hi('LineNr'                 , s:white          , ''              , '' 
 call <sid>hi('VertSplit'              , s:bright_black   , s:bright_black  , ''          , '')
 call <sid>hi('ColorColumn'            , ''               , s:black         , ''          , '')
 call <sid>hi('CursorLine'             , s:none           , s:none          , s:bold      , s:bold)
-call <sid>hi('NonText'                , s:white         , s:none           , ''          , '')
+call <sid>hi('NonText'                , s:white          , s:none          , ''          , '')
+call <sid>hi('Question'               , s:bright_yellow  , s:none          , s:bold      , s:bold)
+call <sid>hi('MoreMsg'                , s:yellow         , s:none          , s:bold      , s:bold)
 
 " Help Syntax
 call <sid>hi('helpExample'            , s:bright_yellow  , ''              , ''          , '')
