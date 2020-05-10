@@ -15,7 +15,7 @@ Plug 'scrooloose/nerdtree'              " Treed directory navigator
 Plug 'Xuyuanp/nerdtree-git-plugin'      " Show git status on NerdTreen
 Plug 'vim-perl/vim-perl'                " Syntax highlight for perl language
 Plug 'preservim/nerdcommenter'          " Comment block of code
-Plug 'ryanoasis/vim-devicons'           " Add icons to nerdtree
+"Plug 'ryanoasis/vim-devicons'           " Add icons to vim
 Plug 'Glench/Vim-Jinja2-Syntax'         " Adds syntax hilight for Jinja2
 Plug 'vim-python/python-syntax'         " Improves python syntax highlight
 Plug 'preservim/nerdcommenter'          " Comment Assistant
@@ -26,6 +26,8 @@ Plug 'vimwiki/vimwiki'                  " Personal wiki for vim
 Plug 'ap/vim-css-color'                 " Adds color preview on source
 Plug 'mhartington/oceanic-next'         " Vim Colorscheme
 Plug 'rakr/vim-one'                     " Vim Colorscheme
+Plug 'arcticicestudio/nord-vim'         " Vim Colorscheme
+Plug 'godlygeek/tabular'                " Tab Alignment
 "Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 filetype plugin indent on
@@ -39,7 +41,7 @@ if exists('+termguicolors')
 endif
 
 " Syntax color scheme
-colorscheme OceanicNext
+colorscheme whatust
 "set background=dark
 
 " Tabline theme
@@ -74,7 +76,6 @@ set backspace=indent,eol,start
 
 " Set max column marker
 set colorcolumn=81
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 " Ask to confirm instead of failing exit command
 set confirm
@@ -115,7 +116,6 @@ set nostartofline
 
 " Highlight cursor
 set cursorline
-hi CursorLine term=bold cterm=bold " guibg=Grey40
 
 " Quickly time out on keycodes, remove timout on mappings
 set notimeout ttimeout ttimeoutlen=200
@@ -234,4 +234,13 @@ let g:multi_cursor_use_default_mapping=0
 " let g:multi_cursor_prev_key            = '<C-p>'
 " let g:multi_cursor_skip_key            = '<C-x>'
 " let g:multi_cursor_quit_key            = '<Esc>'
+
+" Get word syntax group
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
