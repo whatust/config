@@ -2,8 +2,8 @@
 
 export EDITOR="nvim"
 export BROWSER="firefox"
-export TERMINAL="xterm"
-export REASDER="zathura"
+export TERMINAL="termite"
+export READER="zathura"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -22,9 +22,9 @@ export PATH="$PATH:/usr/bin"
 export PATH="$PATH:/usr/sbin"
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH/usr/bin/site_perl"
-export PATH="$PATH/usr/bin/vendor_perl"
-export PATH="$PATH/usr/bin/core_perl"
+export PATH="$PATH:/usr/bin/site_perl"
+export PATH="$PATH:/usr/bin/vendor_perl"
+export PATH="$PATH:/usr/bin/core_perl"
 export PATH="$PATH:$HOME/.scripts"
 export PATH="$PATH:$GOPATH/.local/share/go/bin"
 

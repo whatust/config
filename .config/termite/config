@@ -22,7 +22,7 @@ scroll_on_keystroke = true
 scrollback_lines    = 15000
 
 search_wrap     = true
-font = Monospace 10
+font = Inconsolata 10
 
 [colors]
 background = rgba(29, 47, 57, 0.9)
@@ -31,9 +31,10 @@ background = rgba(29, 47, 57, 0.9)
 foreground      = #f8f8f2
 foreground_bold = #f8f8f2
 #cursor          = #EC5F67
-cursor          = #E50000
-highlight       = #FAC863
+cursor          = #cc00cc
+#highlight       = #FAC863
 
+# Dark
 color0 = #1B2B34
 color1 = #8D0007
 color2 = #27731F
@@ -42,12 +43,14 @@ color4 = #064480
 color5 = #863C86
 color6 = #0f6868
 color7 = #A7ADBA
-color8 = #4F5B66
-color9 = #EC5f67
-color10 = #99C794
-color11 = #FAC863
-color12 = #6699CC
-color13 = #C594C5
-color14 = #5FB3B3
-color15 = #D8DEE9
+
+# Bright
+color8 = #555555
+color9 = #ec5f67
+color10 = #99c794
+color11 = #fac663
+color12 = #6699cc
+color13 = #c594c5
+color14 = #5fb3b3
+color15 = #dddddd
 

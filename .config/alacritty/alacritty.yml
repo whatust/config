@@ -53,23 +53,23 @@ font:
 colors:
 
   primary:
-    background: '#1d2021'
+    background: '#1b2b34'
     foreground: '#f8f8f8'
 
   cursor:
-    text: '#000000'
+    text: '#1b2b34'
     cursor: '#f8f8f8'
 
   vi_mode_cursor:
-    text: '#000000'
+    text: '#1b2b34'
     cursor: '#dc00dc'
 
   selection:
    text: '#f8f8f8'
-   background: '#000000'
+   background: '#1b2b34'
 
   normal:
-    black:   '#1d2021'
+    black:   '#1b2b34'
     red:     '#cc0000'
     green:   '#73d216'
     yellow:  '#ff7400'
@@ -89,7 +89,7 @@ colors:
     white:   '#dddddd'
 
   dim:
-    black:   '#1d2021'
+    black:   '#1b2b34'
     red:     '#cc0000'
     green:   '#73d216'
     yellow:  '#ff7400'
@@ -97,8 +97,6 @@ colors:
     magenta: '#5c3566'
     cyan:    '#0f6868'
     white:   '#a7adad'
-
-background_opacity: 1.0
 
 # Allow terminal applications to change Alacritty's window title.
 dynamic_title: true

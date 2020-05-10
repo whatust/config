@@ -4,15 +4,15 @@
 
 # terminal emulator
 super + Return
-    alacritty
+    $TERMINAL -e tmux
 
 # program launcher
 super + @space
-    dmenu_run
+    dmenu_run -fn 'Inconsolata-8'
 
 # Browser
 super + b
-    brave
+    $BROWSER
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -42,10 +42,10 @@ super + x
     bspc node -c
 
 super + c
-    ~/.scripts/indexmenu -s ':' -p ~/.config/sxhkd/config.lst -v "alacritty -e nvim"
+    ~/.scripts/indexmenu -s ':' -p ~/.config/sxhkd/config.lst -v "$TERMINAL -e  nvim"
 
 super + shift + b
-    ~/.scripts/indexmenu -s ':' -p ~/.config/sxhkd/bookmark.lst -v "brave"
+    ~/.scripts/indexmenu -s ':' -p ~/.config/sxhkd/bookmark.lst -v "$BROWSER"
 
 # alternate between the tiled and monocle layout
 super + f

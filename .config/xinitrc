@@ -5,7 +5,8 @@
 # executes xprofile to start some daemon programs
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile" ] && . "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile"
 
+picom -CG &
+
 # start window manager
 bspwm
-picom -CG &
 

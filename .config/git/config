@@ -3,23 +3,23 @@
     name = whatust
 
 [color "status"]
-    changed = yellow bold
-    added = green bold
-    untracked = red bold
-    branch = magenta bold
-    nobranch = red bold
+    changed = 3 bold
+    added = 2 bold
+    untracked = 9 bold
+    branch = 13 bold
+    nobranch = 9 bold
 
 [color "log"]
-    header = yellow
+    header = 3
 
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+    meta = 3 bold
+    frag = 13 bold
+    old = 9 bold
+    new = 2 bold
 
 [color "branch"]
-    current = blue bold
-    local = green bold
-    remote = magenta bold
+    current = 12 bold
+    local = 2 bold
+    remote = 13 bold
 
