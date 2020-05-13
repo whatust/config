@@ -7,6 +7,9 @@ wget https://github.com/TheAMM/mpv_thumbnail_script/releases/download/0.4.2/mpv_
 # Create two threads for thumbnail
 cp ~/.config/mpv/scripts/mpv_thumbnail_script_server-1.lua ~/.config/mpv/scripts/mpv_thumbnail_script_server-2.lua
 
-# Get 
+# Get crop script
 wget https://github.com/TheAMM/mpv_crop_script/releases/download/0.5.0/mpv_crop_script.lua -O ~/.config/mpv/scripts/mpv_crop_script.lua
 
+# Fix thumbnail bug
+sed -i 's/        \"\-\-o\", output_path/        "--o=" .. output_path/g' ~/.config/mpv/scripts/mpv_thumbnail_script_server-1.lua
+sed -i 's/        \"\-\-o\", output_path/        "--o=" .. output_path/g' ~/.config/mpv/scripts/mpv_thumbnail_script_server-2.lua
