@@ -1,13 +1,15 @@
 # Enable colors and change prompt:
 autoload -U colors && colors
 
-setopt autocd       # Automatically cd into typed directory.
-stty stop undef      # Disable ctrl-s to freeze terminal.
+stty stop undef # Disable ctrl-s to freeze terminal.
+
+setopt autocd   # Automatically cd into typed directory.
 
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
+setopt HIST_IGNORE_DUPS  # Ignores duplicated history entries
 
 #  Aliases and custom completions.
 [ -d $HOME/.config/aliases ] && source $HOME/.config/aliases/aliases
@@ -37,9 +39,9 @@ export LESS_TERMCAP_mb=$(tput bold; tput setaf 13) # begin bold
 export LESS_TERMCAP_md=$(tput bold; tput setaf 12) # begin blink
 export LESS_TERMCAP_us=$(tput bold; tput setaf 14) # begin underline
 export LESS_TERMCAP_so=$(tput bold; tput setaf 11) # begin reverse video
-export LESS_TERMCAP_se=$(tput sgr0) # reset reverse video
-export LESS_TERMCAP_me=$(tput sgr0) # reset bold/blink
-export LESS_TERMCAP_ue=$(tput sgr0) # reset underline
+export LESS_TERMCAP_se=$(tput sgr0)                # reset reverse video
+export LESS_TERMCAP_me=$(tput sgr0)                # reset bold/blink
+export LESS_TERMCAP_ue=$(tput sgr0)                # reset underline
 
 # Spaceship config
 SPACESHIP_PROMPT_ORDER=(
