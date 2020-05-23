@@ -27,8 +27,9 @@ Plug 'ap/vim-css-color'                 " Adds color preview on source
 Plug 'mhartington/oceanic-next'         " Vim Colorscheme
 Plug 'rakr/vim-one'                     " Vim Colorscheme
 Plug 'arcticicestudio/nord-vim'         " Vim Colorscheme
+Plug 'rhysd/git-messenger.vim'          " Git commit message visualizer
 Plug 'godlygeek/tabular'                " Tab Alignment
-"Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 filetype plugin indent on
 
@@ -56,8 +57,6 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 " Allow space for alignment and tab for indentations
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
-" Map leader
-let mapleader = ","
 
 " Identation
 set autoindent
@@ -92,9 +91,6 @@ set fileencoding=utf-8
 
 " Highlight serach matches
 set hlsearch
-
-" Shortcut to remove higlight
-map <leader>n :noh<CR>
 
 " Stop redrawing during operations
 set lazyredraw
@@ -147,65 +143,17 @@ set pastetoggle=<F3>
 " Let fzf work on tmux
 let g:fzf_prefer_tmux = 1
 
-" Vertical split
-nnoremap <silent> vv <C-w>v
-
-" Shortcut for git commands
-nmap <leader>gb :Gblame<CR>
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gd :Gitdiff<CR>
-nmap <leader>gcm :Gitcommit<CR>
-nmap <leader>gco :!git checkout
-
-" Diff Red Green hilight
-highlight diffAdded guifg=#00bf00
-highlight diffRemoved guifg=#bf0000
-
 " Function to make tmux zoom its runner pane.
 function! VimuxZoomRunner()
     call VimuxInspectRunner()
     call system("tmux resize-pane -Z")
 endfunction
 
-" Zoom the runner pane (use <bind-key> z to restore runner pane)
-map <Leader>vz :call VimuxZoomRunner()<CR>
-
-" NERDTree control map
-map <C-t> :NERDTreeToggle<CR>
-set modifiable
-let NERDTreeShowHidden=1
-
-" Escape using kj
-imap kj <Esc>
-imap Kj <Esc>
-imap kJ <Esc>
-imap KJ <Esc>
-
-" Mapping fzf search commands
-noremap <C-N> :GFiles<CR>
-noremap <C-n> :Files<CR>
-
-noremap <C-c> :VimuxPromptCommand<CR>
-noremap <C-a> :VimuxRunLastCommand<CR>
-noremap <C-i> :VimuxInspectRunner<CR>
-noremap <C-q> :VimuxCloseRunner<CR>
-noremap <C-x> :VimuxInterruptRunner<CR>
-
-" Boxes
-vmap <F2> !boxes -s 80 -p a1 -a c <CR>
-vmap <F3> !boxes -s 80 -dshell -p a1 -a c <CR>
-
 " Grep shortcut
 if executable('ag')
     set grepprg=ag\
     let g:ctrlp_user_command = 'ag %s -l --cocolor -g ""'
 endif
-
-nnoremap Y :grep! "<C-R><C-W> ."<CR>:cw<CR>
-
-" Remove trailing whitespaces
-
-nmap <F2> :%s/\s\+$//e <CR>
 
 " Change line hilight on insert mode
 autocmd InsertEnter,InsertLeave * set cul!
@@ -223,9 +171,6 @@ augroup END
 autocmd Vimresized * :wincmd =
 
 " Multicursor hotkey mapping
-let g:multi_cursor_use_default_mapping=0
-
-" Default mapping
 " let g:multi_cursor_start_word_key      = '<C-n>'
 " let g:multi_cursor_select_all_word_key = '<A-n>'
 " let g:multi_cursor_start_key           = 'g<C-n>'
@@ -235,12 +180,89 @@ let g:multi_cursor_use_default_mapping=0
 " let g:multi_cursor_skip_key            = '<C-x>'
 " let g:multi_cursor_quit_key            = '<Esc>'
 
+" NERDTree
+set modifiable
+let NERDTreeShowHidden=1
+
+" Gitmessenger Color
+hi gitmessengerPopupNormal term=None guibg=#1b2b34 guifg=#dddddd
+hi gitmessengerHeader      term=None guibg=#1b2b34 guifg=#5fb3b3
+hi gitmessengerHash        term=None guibg=#1b2b34 guifg=#ff7400
+hi gitmessengerHistory     term=None guibg=#1b2b34 guifg=#c594c5
+
+" Diff Red Green hilight
+highlight   GitGutterAdd      guifg=#99c794 guibg=none ctermbg=none
+highlight   GitGutterChange   guifg=#c594c5 guibg=none ctermbg=none
+highlight   GitGutterDelete   guifg=#ec5f67 guibg=none ctermbg=none
+
+"""""""""""
+" Hotkeys "
+"""""""""""
+
+" Map leader
+let mapleader = ","
+
+" Remove multicursor default keybinds
+let g:multi_cursor_use_default_mapping=0
+
+" Global
+
+" Vertical split
+nnoremap <silent> vv <C-w>v
+
+" Mapping fzf search commands
+noremap <C-N> :GFiles<CR>
+noremap <C-n> :Files<CR>
+
+" Vimux
+noremap <C-c> :VimuxPromptCommand<CR>
+noremap <C-a> :VimuxRunLastCommand<CR>
+noremap <C-i> :VimuxInspectRunner<CR>
+" noremap <C-q> :VimuxCloseRunner<CR>
+" noremap <C-x> :VimuxInterruptRunner<CR>
+
+" NERDTree control map
+map <C-t> :NERDTreeToggle<CR>
+
+" Remove higlight
+map <Leader>n :noh<CR>
+
+" Boxes
+vmap <F2> !boxes -s 80 -p a1 -a c <CR>
+vmap <F3> !boxes -s 80 -dshell -p a1 -a c <CR>
+vmap <C-s> :Tabular /
+
+" Normal Mode
+
+" Remove trailing whitespaces
+nmap <F2> :%s/\s\+$//e <CR>
+
+" Open git messenger window
+nmap <C-g> :GitMessenger<CR>
+nmap <C-S-g> :GitGutterSignsToggle<CR>
+
+" Shortcut for git commands
+" nmap <Leader>gb :Gblame<CR>
+" nmap <Leader>gs :Gstatus<CR>
+" nmap <Leader>gd :Gitdiff<CR>
+" nmap <Leader>gcm :Gitcommit<CR>
+" nmap <Leader>gco :!git checkout
+
 " Get word syntax group
-nmap <C-S-P> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-    if !exists("*synstack")
-        return
-    endif
-    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+" nmap <C-S-P> :call <SID>SynStack()<CR>
+" function! <SID>SynStack()
+"     if !exists("*synstack")
+"         return
+"     endif
+"     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+" endfunc
+
+" Insert Mode
+
+" Escape using kj
+imap kj <Esc>
+imap Kj <Esc>
+imap kJ <Esc>
+imap KJ <Esc>
+
 
