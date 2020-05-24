@@ -207,9 +207,6 @@ let g:multi_cursor_use_default_mapping=0
 
 " Global
 
-" Vertical split
-nnoremap <silent> vv <C-w>v
-
 " Mapping fzf search commands
 noremap <C-N> :GFiles<CR>
 noremap <C-n> :Files<CR>
@@ -234,12 +231,21 @@ vmap <C-s> :Tabular /
 
 " Normal Mode
 
+" Vertical split
+nnoremap <silent> vv <C-w>v
+
 " Remove trailing whitespaces
 nmap <F2> :%s/\s\+$//e <CR>
 
 " Open git messenger window
 nmap <C-g> :GitMessenger<CR>
 nmap <C-S-g> :GitGutterSignsToggle<CR>
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Shortcut for git commands
 " nmap <Leader>gb :Gblame<CR>
@@ -265,4 +271,17 @@ imap Kj <Esc>
 imap kJ <Esc>
 imap KJ <Esc>
 
+" coc Completion
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
