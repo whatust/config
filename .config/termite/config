@@ -30,9 +30,9 @@ background = rgba(29, 47, 57, 0.9)
 # special
 foreground      = #f8f8f2
 foreground_bold = #f8f8f2
-#cursor          = #EC5F67
+#cursor         = #EC5F67
 cursor          = #cc00cc
-#highlight       = #FAC863
+#highlight      = #FAC863
 
 # Dark
 color0 = #1B2B34

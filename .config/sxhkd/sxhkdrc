@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-    $TERMINAL -e tmux
+    $TERMINAL -e 'tmux -f /home/whatust/.config/tmux/tmux.conf'
 
 # program launcher
 super + @space

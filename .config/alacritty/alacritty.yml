@@ -112,10 +112,10 @@ cursor:
 # Live config reload (changes require restart)
 live_config_reload: true
 
-shell:
-  program: /usr/bin/tmux
-  args:
-    - -u
+#shell:
+#  program: /usr/bin/tmux
+#  args:
+#    - -f /home/whatust/.config/tmux/tmux.conf
 
 # Starting directory
 working_directory: None
