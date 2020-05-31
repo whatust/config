@@ -170,16 +170,6 @@ augroup END
 " Rebalance windows on vim resize
 autocmd Vimresized * :wincmd =
 
-" Multicursor hotkey mapping
-" let g:multi_cursor_start_word_key      = '<C-n>'
-" let g:multi_cursor_select_all_word_key = '<A-n>'
-" let g:multi_cursor_start_key           = 'g<C-n>'
-" let g:multi_cursor_select_all_key      = 'g<A-n>'
-" let g:multi_cursor_next_key            = '<C-n>'
-" let g:multi_cursor_prev_key            = '<C-p>'
-" let g:multi_cursor_skip_key            = '<C-x>'
-" let g:multi_cursor_quit_key            = '<Esc>'
-
 " NERDTree
 set modifiable
 let NERDTreeShowHidden=1
@@ -191,9 +181,18 @@ hi gitmessengerHash        term=None guibg=#1b2b34 guifg=#ff7400
 hi gitmessengerHistory     term=None guibg=#1b2b34 guifg=#c594c5
 
 " Diff Red Green hilight
-highlight   GitGutterAdd      guifg=#99c794 guibg=none ctermbg=none
-highlight   GitGutterChange   guifg=#c594c5 guibg=none ctermbg=none
-highlight   GitGutterDelete   guifg=#ec5f67 guibg=none ctermbg=none
+hi GitGutterAdd      guifg=#99c794 guibg=none ctermbg=none
+hi GitGutterChange   guifg=#c594c5 guibg=none ctermbg=none
+hi GitGutterDelete   guifg=#ec5f67 guibg=none ctermbg=none
+
+hi DiffAdded          guifg=#99c794 guibg=none ctermbg=none
+hi DiffRemoved        guifg=#ec5f67 guibg=none ctermbg=none
+hi DiffFile           guifg=#fac663 guibg=none ctermbg=none
+hi DiffNewFile        guifg=#fac663 guibg=none ctermbg=none
+hi gitCommitDiff      guifg=#ff7400 guibg=none ctermbg=none
+hi DiffIndexLine      guifg=#ff7400 guibg=none ctermbg=none
+hi DiffLine           guifg=#c594c5 guibg=none ctermbg=none
+hi diffSubname        guifg=#6699cc guibg=none ctermbg=none
 
 """""""""""
 " Hotkeys "
@@ -205,10 +204,20 @@ let mapleader = ","
 " Remove multicursor default keybinds
 let g:multi_cursor_use_default_mapping=0
 
+" Multicursor hotkey mapping
+let g:multi_cursor_start_word_key      = '<C-w>'
+" let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+" let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-w>'
+" let g:multi_cursor_prev_key            = '<C-p>'
+" let g:multi_cursor_skip_key            = '<C-x>'
+ let g:multi_cursor_quit_key            = '<Esc>'
+
 " Global
 
 " Mapping fzf search commands
-noremap <C-N> :GFiles<CR>
+noremap <A-n> :GFiles<CR>
 noremap <C-n> :Files<CR>
 
 " Vimux
@@ -239,7 +248,7 @@ nmap <F2> :%s/\s\+$//e <CR>
 
 " Open git messenger window
 nmap <C-g> :GitMessenger<CR>
-nmap <C-S-g> :GitGutterSignsToggle<CR>
+nmap <A-g> :GitGutterSignsToggle<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -255,13 +264,13 @@ nmap <silent> gr <Plug>(coc-references)
 " nmap <Leader>gco :!git checkout
 
 " Get word syntax group
-" nmap <C-S-P> :call <SID>SynStack()<CR>
-" function! <SID>SynStack()
-"     if !exists("*synstack")
-"         return
-"     endif
-"     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-" endfunc
+ nmap <C-S-P> :call <SID>SynStack()<CR>
+ function! <SID>SynStack()
+     if !exists("*synstack")
+         return
+     endif
+     echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+ endfunc
 
 " Insert Mode
 
@@ -274,14 +283,11 @@ imap KJ <Esc>
 " coc Completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ <SID>check_back_space() ? "\<C-TAB>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
