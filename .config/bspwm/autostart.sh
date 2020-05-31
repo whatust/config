@@ -14,22 +14,8 @@ function run {
 #xrandr --output HDMI2 --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off
 
 $HOME/.config/polybar/launch.sh &
+sxhkd -c ~/.config/sxhkd/sxhkdrc &
 
-#change your keyboard if you need it
-#setxkbmap -layout be
-
-#Some ways to set your wallpaper besides variety or nitrogen
-feh --bg-fill /usr/share/backgrounds/arcolinux/escape-to-italy-1920x1200.jpg &
-
-xsetroot -cursor_name left_ptr &
-run sxhkd -c ~/.config/sxhkd/sxhkdrc &
-
-#run variety &
-run nm-applet &
-run xfce4-power-manager &
-numlockx on &
 picom --config $HOME/.config/bspwm/picom.conf &
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-/usr/lib/xfce4/notifyd/xfce4-notifyd &
-~/.config/bspwm/scripts/scratchpad_start
+~/.config/bspwm/scripts/scratchpad_start &
 run dropbox &

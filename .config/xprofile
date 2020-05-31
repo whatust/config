@@ -1,5 +1,7 @@
 #!/bin/sh
 
 mpd &
-xcompmgr &
+picom --config $HOME/.config/picom/picom.conf &
+xsetroot -cursor_name left_ptr &
+xwallpaper --zoom ~/Images/wallpapers/vertical/test_wallpaper.jpg &
 

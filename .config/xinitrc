@@ -5,9 +5,9 @@
 # executes xprofile to start some daemon programs
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile" ] && . "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile"
 
-picom -CG &
-$HOME/.config/polybar/./launch.sh
-
 # start window manager
 bspwm
+
+# sxhkd -c ~/.config/sxhkd/dwm_sxhkdrc &
+# dwm
 
