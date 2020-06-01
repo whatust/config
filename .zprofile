@@ -23,5 +23,8 @@ export PATH="$PATH:/usr/sbin"
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:$HOME/.scripts"
+export PATH="$PATH:$HOME/.scripts/i3"
+export PATH="$PATH:$HOME/.scripts/dwm"
+export PATH="$PATH:$HOME/.scripts/misc"
 export PATH="$PATH:$GOPATH/.local/share/go/bin"
 

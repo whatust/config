@@ -1,0 +1,23 @@
+#!/bin/sh
+
+cmds="\
+lock:slock
+logout:kill -TERM $(pidof -s dwm)
+restart:kill -HUP $(pidof -s dwm)
+hibernate:hibernate
+reboot:shutdown -r 0
+shutdown:shutdown 0"
+
+cmd="$(echo "$cmds" | cut -d':' -f 1 | dmenu -fn "Source Code Pro-10")" || \
+    exit 1
+
+case "$cmd" in
+    restart) `echo "$cmds" | grep "^$cmd" | cut -d ':' -f2-` ;;
+    *) 
+    confirm="\
+YES
+NO";
+    [[ $(echo "$confirm" | dmenu -fn "Source Code Pro-10") == "YES" ]] && \
+        `echo "$cmds" | grep "^$cmd" | cut -d ':' -f2-` ;;
+esac
+

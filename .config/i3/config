@@ -103,12 +103,12 @@ bindsym $mod+Shift+9 move container to workspace 9; workspace 9
 set $mode_system System (l) lock, (q) logout, (r) restart, (s) suspend, (h) hibernate, (Shift+r) reboot, (Shift+q) shutdown
 bindsym $mod+0 mode "$mode_system"
 mode "$mode_system" {
-  bindsym q exec --no-startup-id ~/.i3/i3exit logout, mode "default"
-  bindsym s exec --no-startup-id ~/.i3/i3exit suspend, mode "default"
-  bindsym h exec --no-startup-id ~/.i3/i3exit hibernate, mode "default"
-  bindsym r exec --no-startup-id ~/.i3/i3exit restart, mode "default"
-  bindsym Shift+r exec --no-startup-id ~/.i3/i3exit reboot, mode "default"
-  bindsym Shift+q exec --no-startup-id ~/.i3/i3exit shutdown, mode "default"
+  bindsym q exec --no-startup-id i3exit logout, mode "default"
+  bindsym s exec --no-startup-id i3exit suspend, mode "default"
+  bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+  bindsym r exec --no-startup-id i3exit restart, mode "default"
+  bindsym Shift+r exec --no-startup-id i3exit reboot, mode "default"
+  bindsym Shift+q exec --no-startup-id i3exit shutdown, mode "default"
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
