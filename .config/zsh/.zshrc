@@ -38,26 +38,15 @@ export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 13) # begin bold
 export LESS_TERMCAP_md=$(tput bold; tput setaf 12) # begin blink
 export LESS_TERMCAP_us=$(tput bold; tput setaf 14) # begin underline
-export LESS_TERMCAP_so=$(tput bold; tput setaf 11) # begin reverse video
+export LESS_TERMCAP_so=$(tput setaf 0; tput setab 11) # begin reverse video
 export LESS_TERMCAP_se=$(tput sgr0)                # reset reverse video
 export LESS_TERMCAP_me=$(tput sgr0)                # reset bold/blink
 export LESS_TERMCAP_ue=$(tput sgr0)                # reset underline
 
 # Spaceship config
-SPACESHIP_PROMPT_ORDER=(
-#    time
-    user
-    host
-    dir
-    hg
-    char
-#    exec_time
-)
+SPACESHIP_PROMPT_ORDER=( user host dir hg char )
 
-SPACESHIP_RPROMPT_ORDER=(
-    git
-    jobs
-)
+SPACESHIP_RPROMPT_ORDER=( git jobs )
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false

@@ -6,8 +6,8 @@
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile" ] && . "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile"
 
 # start window manager
-bspwm
+#bspwm
 
-# sxhkd -c ~/.config/sxhkd/dwm_sxhkdrc &
-# dwm
+ sxhkd -c ~/.config/sxhkd/dwm_sxhkdrc &
+ dwm
 
