@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    2) "$TERMINAL" -e "$EDITOR" "$0" ;;
+
+esac
+
+date "+%a, %d %b %Y %H:%M"
+
+# vim: set syntax=shell

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) notify-send "$(/bin/yay -Qu)" ;;
+	2) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+echo "yay $(/bin/yay -Qu | grep -Fcv "[ignored]")"
+
+# vim: set syntax=shell

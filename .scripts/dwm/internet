@@ -1,0 +1,20 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+	1) "$TERMINAL" -e nmtui; pkill -RTMIN+4 dwmblocks ;;
+	2) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+logfile="/dev/shm/netlog"
+prevdata="$(cat "$logfile")"
+
+currentrx="$(($(cat /sys/class/net/e*/statistics/rx_bytes | paste -sd '+')))"
+currenttx="$(($(cat /sys/class/net/e*/statistics/tx_bytes | paste -sd '+')))"
+
+echo "$(((currentrx-${prevdata%% *})/1024))KiB/\
+$(((currenttx-${prevdata##* })/1024))KiB"
+
+echo "$currentrx $currenttx" > "$logfile"
+
+# vim: set syntax=shell
+
