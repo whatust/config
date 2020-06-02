@@ -2,7 +2,7 @@
 
 export EDITOR="nvim"
 export BROWSER="firefox"
-export TERMINAL="termite"
+export TERMINAL="st"
 export READER="zathura"
 
 export XDG_CONFIG_HOME="$HOME/.config"

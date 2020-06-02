@@ -11,12 +11,13 @@ prepopulate-query-feeds yes
  
 goto-next-feed no
  
-browser "brave-browser %u"
+browser "$BROWSER %u"
  
+bind-key j down all
+bind-key k up all
 bind-key j down feedlist
 bind-key k up feedlist
 bind-key l open feedlist
- 
 bind-key j down articlelist
 bind-key k up articlelist
 bind-key l open articlelist
@@ -32,11 +33,12 @@ bind-key K prev article
  
 # -- Display ----------------------------------------------------------------
  
-show-read-feeds no
+show-read-feeds yes
 feed-sort-order unreadarticlecount-asc
  
-color info default default reverse
-color listnormal_unread yellow default
-color listfocus blue default reverse bold
-color listfocus_unread blue default reverse bold
+color info color15 default
+color listnormal color7 default bold
+color listnormal_unread color3 default bold
+color listfocus color14 default reverse bold
+color listfocus_unread color14 default reverse bold
 
