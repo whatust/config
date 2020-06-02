@@ -83,7 +83,7 @@ set confirm
 set showcmd
 
 " Set command line height to 2 characters
-set cmdheight=2
+set cmdheight=1
 
 " Use utf-8 for character encoding
 set encoding=utf-8
@@ -175,24 +175,10 @@ set modifiable
 let NERDTreeShowHidden=1
 
 " Gitmessenger Color
-hi gitmessengerPopupNormal term=None guibg=#1b2b34 guifg=#dddddd
-hi gitmessengerHeader      term=None guibg=#1b2b34 guifg=#5fb3b3
-hi gitmessengerHash        term=None guibg=#1b2b34 guifg=#ff7400
-hi gitmessengerHistory     term=None guibg=#1b2b34 guifg=#c594c5
-
-" Diff Red Green hilight
-hi GitGutterAdd      guifg=#99c794 guibg=none ctermbg=none
-hi GitGutterChange   guifg=#c594c5 guibg=none ctermbg=none
-hi GitGutterDelete   guifg=#ec5f67 guibg=none ctermbg=none
-
-hi DiffAdded          guifg=#99c794 guibg=none ctermbg=none
-hi DiffRemoved        guifg=#ec5f67 guibg=none ctermbg=none
-hi DiffFile           guifg=#fac663 guibg=none ctermbg=none
-hi DiffNewFile        guifg=#fac663 guibg=none ctermbg=none
-hi gitCommitDiff      guifg=#ff7400 guibg=none ctermbg=none
-hi DiffIndexLine      guifg=#ff7400 guibg=none ctermbg=none
-hi DiffLine           guifg=#c594c5 guibg=none ctermbg=none
-hi diffSubname        guifg=#6699cc guibg=none ctermbg=none
+"hi gitmessengerPopupNormal term=None guibg=#1b2b34 guifg=#dddddd
+"hi gitmessengerHeader      term=None guibg=#1b2b34 guifg=#5fb3b3
+"hi gitmessengerHash        term=None guibg=#1b2b34 guifg=#ff7400
+"hi gitmessengerHistory     term=None guibg=#1b2b34 guifg=#c594c5
 
 """""""""""
 " Hotkeys "
