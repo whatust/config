@@ -1,2 +1,5 @@
+#!/bin/sh
+
 find . -name '*.[ch]' | xargs egrep -n "$1";
 
+#vim: set syntax=shell

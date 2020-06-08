@@ -17,7 +17,7 @@ case "$cmd" in
     confirm="\
 YES
 NO";
-    [[ $(echo "$confirm" | dmenu -fn "Source Code Pro-10") == "YES" ]] && \
+    [[ $(echo "$confirm" | dmenu -p "Are you sure?" -fn "Source Code Pro-10") == "YES" ]] && \
         `echo "$cmds" | grep "^$cmd" | cut -d ':' -f2-` ;;
 esac
 

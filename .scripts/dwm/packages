@@ -5,6 +5,6 @@ case $BLOCK_BUTTON in
 	2) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-echo "yay $(/bin/yay -Qu | grep -Fcv "[ignored]")"
+echo "  $(/bin/yay -Qu | grep -Fcv "[ignored]")"
 
 # vim: set syntax=shell

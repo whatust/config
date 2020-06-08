@@ -22,7 +22,7 @@ scroll_on_keystroke = true
 scrollback_lines    = 15000
 
 search_wrap     = true
-font = Inconsolata 10
+font = monospace 10
 
 [colors]
 background = rgba(29, 47, 57, 0.93)

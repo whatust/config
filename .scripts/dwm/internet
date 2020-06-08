@@ -5,6 +5,8 @@ case $BLOCK_BUTTON in
 	2) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
+[[ -f /dev/shm/netlog ]] || echo "0 0"> /dev/shm/netlog
+
 logfile="/dev/shm/netlog"
 prevdata="$(cat "$logfile")"
 
