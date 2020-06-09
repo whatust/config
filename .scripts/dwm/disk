@@ -1,0 +1,10 @@
+#!/bin/sh
+
+case $BLOCK_BUTTON in
+    2) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+echo " $(df -h -P '/home' | awk '/\/dev/ {print $4 " ("$5")"}')"
+
+# vim: set syntax=shell
+
