@@ -1,4 +1,4 @@
-zprofile~/.zprofile
+zprofile:~/.zprofile
 nvimrc:~/.config/nvim/init.vim
 tmux:~/.config/tmux/tmux.conf
 sxhkd:~/.config/sxhkd/sxhkdrc
@@ -14,4 +14,5 @@ zshrc:~/.config/zsh/.zshrc
 alacritty:~/.config/alacritty/alacritty.yml
 gtk3:~/.config/gtk-3.0/settings.ini
 autostart:~/.config/bspwm/autostart.sh
+xinitrc:~/.config/xinitrc
 
