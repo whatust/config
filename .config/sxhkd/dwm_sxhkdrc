@@ -1,0 +1,40 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+#super + Return
+#    $TERMINAL -e 'tmux -f /home/whatust/.config/tmux/tmux.conf'
+
+# program launcher
+#super + @space
+#    dmenu_run -fn 'Incosolata-10'
+
+# Browser
+#super + b
+#    $BROWSER
+
+# make sxhkd reload its configuration files:
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# Print Screen
+
+{_,control,shift} + Print
+    kazam {-f,-a,-s}
+
+#
+# bspwm hotkeys
+#
+#
+
+super + c
+    ~/.scripts/misc/indexmenu -s ':' -p ~/.config/sxhkd/config.lst -v "$TERMINAL -e nvim"
+
+super + shift + b
+    ~/.scripts/misc/indexmenu -s ':' -p ~/.config/sxhkd/bookmark.lst -v "$BROWSER"
+
+#
+# state/flags
+#
+
