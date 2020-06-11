@@ -15,4 +15,10 @@ alacritty:~/.config/alacritty/alacritty.yml
 gtk3:~/.config/gtk-3.0/settings.ini
 autostart:~/.config/bspwm/autostart.sh
 xinitrc:~/.config/xinitrc
+xprofile:~/.config/xprofile
+config_list:~/.config/sxhkd
+dunst:~/.config/dunst/dunstrc
+st:~/.local/src/st/config.h
+dwm:~/.local/src/dwm/config.h
+dwmblocks:~/.local/src/dwmblocks/config.h
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-filter() { mpc | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*/⏸/g;/\\[playing\\].*/d" | paste -sd '';}
+filter() { mpc | sed "/^volume:/d;s/\\&/&amp;/g;s/\\[paused\\].*//g;/\\[playing\\].*/d" | paste -sd '';}
 
 case $BLOCK_BUTTON in
 	1) mpc toggle | filter ;;  # left click, pause/unpause
