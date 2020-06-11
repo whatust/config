@@ -3,5 +3,5 @@
 mpd &
 picom --config $HOME/.config/picom/picom.conf &
 xsetroot -cursor_name left_ptr &
-xwallpaper --zoom ~/Images/wallpapers/horizontal/test_wallpaper.jpg &
+xwallpaper --zoom ~/Images/wallpapers/horizontal/polygon.jpg &
 
