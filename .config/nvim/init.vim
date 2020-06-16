@@ -180,6 +180,9 @@ let NERDTreeShowHidden=1
 "hi gitmessengerHash        term=None guibg=#1b2b34 guifg=#ff7400
 "hi gitmessengerHistory     term=None guibg=#1b2b34 guifg=#c594c5
 
+" Vim Wiki
+let g:vimwiki_list = [{'path': '~/.local/vimwiki/', 'syntax': 'markdown'}]
+
 """""""""""
 " Hotkeys "
 """""""""""
@@ -191,14 +194,14 @@ let mapleader = ","
 let g:multi_cursor_use_default_mapping=0
 
 " Multicursor hotkey mapping
-let g:multi_cursor_start_word_key      = '<C-w>'
+" let g:multi_cursor_start_word_key      = '<C-w>'
 " let g:multi_cursor_select_all_word_key = '<A-n>'
-let g:multi_cursor_start_key           = 'g<C-n>'
+" let g:multi_cursor_start_key           = 'g<C-n>'
 " let g:multi_cursor_select_all_key      = 'g<A-n>'
-let g:multi_cursor_next_key            = '<C-w>'
+" let g:multi_cursor_next_key            = '<C-w>'
 " let g:multi_cursor_prev_key            = '<C-p>'
 " let g:multi_cursor_skip_key            = '<C-x>'
- let g:multi_cursor_quit_key            = '<Esc>'
+"  let g:multi_cursor_quit_key            = '<Esc>'
 
 " Global
 
