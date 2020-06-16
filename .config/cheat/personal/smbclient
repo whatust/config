@@ -1,0 +1,8 @@
+---
+tags: [ pentest, personal ]
+---
+
+# Login to a SMB share
+smbclient
+
+# Commands inside the client

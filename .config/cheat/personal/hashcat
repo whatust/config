@@ -1,0 +1,9 @@
+---
+tags: [ pentest, personal ]
+---
+
+# Get list of codes and hash examples
+hashcat --example-hashes
+
+# Crack hash with unmodified wordlist
+hashcat -m [hash_code] [hash_file] [path/to/word/list]

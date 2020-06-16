@@ -1,5 +1,9 @@
 # conf.yml:
 #  ...
+
+colorize: true
+style: native
+
 cheatpaths:
     - name: community
       path: /usr/share/cheat/cheatsheets/community

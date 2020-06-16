@@ -1,0 +1,67 @@
+---
+tags: [ kubernet, automation, personal ]
+---
+
+# Get nodes in a cluster
+kubectl get nodes
+
+# Get cluster info
+kubectl cluster-info
+
+# List all resources in the cluster
+kubectl get all --all-namespaces
+
+# Get resources as json
+kubectl get resource_name -o=jsonpath='{json_query}'
+
+# Get resource as custom table
+kubectl get resource_name -o=custom-columns=column_name:json_quey, column_name:json_quey...
+
+# Execute command on pod
+kubectl exec pod_name command
+
+# Deploy pod without config file
+kubectl run --generatetor=run-pod/v1 pod_name --image=image_name
+
+# Dry run yalm file
+kubectl run --generatetor=run-pod/v1 pod_name --image=image_name --dry-run -o yaml
+
+# Delete resouce (pod, daemonset, deployment service ...)
+kubectl delete resource_name resource_instance_name
+
+# Expose pod
+kubectl expose pod pod_name --port=port_number --name=service_name
+
+# Expose eployment
+kubectl expose deployment deployment_name --port=port_number --name=service_name
+
+# Remove jobs from a node and mark as unschedulable
+kubectl drain node_name --ignore_daemonset
+
+# Add node to scheduable list
+kubectl uncordon node_name
+
+# Check pod upgrade status
+kubeclt rollout status deployment/deployment_name
+
+# Undo the pod upgrades
+kubectl undo deployment/deployment_name
+
+# Apply upgrade from config file
+kubeclt aplly -f config_file --record
+
+# Set image version of a deplyment
+kubectl set image deployment/deployment_name container_name=image_path --record
+
+# Get certificate signature request informantion
+kubectl get csr certificate_request_name -o yaml
+
+# Accept certificate request
+kubectl certificate approve certificate_request_name
+
+# Deny certificate request
+kubectl certificate deny certificate_request_name
+
+# Delete certificate request
+kubectl delete csr certificate_request_name
+

@@ -1,0 +1,9 @@
+---
+tags [ pentest, personal ]
+---
+# Scan subdiretories with medium wordlist
+gobuster dir -u http://url_to_scan.com/some_subdiretory -w /usr/share/wordlist/dirbuster/medium
+
+# Adds file extension to scan
+gobuster dir -x php -u http://url_to_scan.com/some_subdiretory -w /usr/share/wordlist/dirbuster/medium
+

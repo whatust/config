@@ -1,0 +1,16 @@
+---
+tags: [ kubernetes, automation, personal ]
+---
+
+# Change etcdctl api version to 3
+export ETCD_API=3
+
+# Save cluster snapshot
+etcdctl snapshot save output_file --endpoints= --cacert=path/to/cacert --cert=path/to/cert --key=/path/to/key
+
+# Etcdctl snapshot status snapshot_file
+etcdctl snapshot status path/to/snapshot
+
+# Restore cluster to snapshot
+etcdctl restore path/to/snapshot --data-dir= --initial-cluster= --initial-cluster-token= --initial-advertise-peer-urls=
+

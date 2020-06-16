@@ -35,6 +35,7 @@ bindkey -v '^?' backward-delete-char
 # Add hidden files to fzf
 export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 
+# Setting up colors on less command
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 13) # begin bold
 export LESS_TERMCAP_md=$(tput bold; tput setaf 12) # begin blink
 export LESS_TERMCAP_us=$(tput bold; tput setaf 14) # begin underline
@@ -42,6 +43,9 @@ export LESS_TERMCAP_so=$(tput setaf 0; tput setab 11) # begin reverse video
 export LESS_TERMCAP_se=$(tput sgr0)                # reset reverse video
 export LESS_TERMCAP_me=$(tput sgr0)                # reset bold/blink
 export LESS_TERMCAP_ue=$(tput sgr0)                # reset underline
+
+# Adding autocomplete to cheat
+fpath=(~/.config/zsh/ $fpath)
 
 # Spaceship config
 SPACESHIP_PROMPT_ORDER=( user host dir hg char )
