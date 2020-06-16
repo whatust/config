@@ -1,0 +1,9 @@
+---
+tags: [ pentest, personal ]
+---
+
+# List naming context
+ldapsearch -x -h [ip address] -s base namingcontexts
+
+# List a naming context
+ldapseach -x -h [ip address] -b [name context]

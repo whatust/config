@@ -1,0 +1,10 @@
+---
+tags: [ shell ]
+---
+
+# To cut prefix of string using ' ' as separator
+${<str>##* } or ${<str>#* } # first is greed
+
+# To cut sufix of string using ' ' as separator
+${<str>%% *} or ${<str>% *} # first is greed
+

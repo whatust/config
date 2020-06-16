@@ -1,0 +1,43 @@
+---
+tags: [ shell ]
+---
+
+# To implement a for loop:
+for file in *;
+do 
+    echo $file found;
+done
+
+# To implement a case command:
+case "$1"
+in
+    0) echo "zero found";;
+    1) echo "one found";;
+    2) echo "two found";;
+    3*) echo "something beginning with 3 found";;
+esac
+
+# To compare strings:
+[ str1 = str2] or [[ str1 == str2 ]]  # Equal
+[ str1 != str2] or [[ str1 != str2 ]] # Not Equal
+
+# To check if file exists:
+[ -f path/to/file ] or [[ -f path/to/file ]]
+-d : check if directory exists;
+-e : check if object exists (directory, file, socket...);
+-O : check if it is owned by user;
+-z : check if string is zero length
+-n : check if string is not zero length
+
+# To turn on debugging:
+set -x
+
+# To turn off debugging:
+set +x
+
+# Retrieve N-th piped command exit status:
+printf 'foo' | fgrep 'foo' | sed 's/foo/bar/'
+echo ${PIPESTATUS[0]}  # replace 0 with N
+
+# To create a lockfile:
+( set -o noclobber; echo > my.lock ) || echo 'Failed to create lock file'

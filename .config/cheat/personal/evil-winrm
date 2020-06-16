@@ -4,3 +4,5 @@ tags: [ pentest, personal ]
 
 # Login to windows rpc
 evil-winrm -i [ip_address] -u [username] -p [password]
+
+

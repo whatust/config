@@ -1,0 +1,10 @@
+---
+tags: [ pentest, personal ]
+---
+
+# Null login
+rpcclient -U '' <ip address>
+
+# Rpc commands
+enumdom   - enumerate domains
+enumusers - enumerate users

@@ -2,7 +2,16 @@
 tags: [ pentest, personal ]
 ---
 
+# List shares
+smbclient -L //[ip_address]
+
 # Login to a SMB share
-smbclient
+smbclient //[ip_address]/[share_name]
 
 # Commands inside the client
+cd [directory_name]                    - change directory
+ls                                     - list directory
+get [remote_filename] {local_filename} - copy file to local
+put [local_filename] {remote_filename} - copy file to remote
+mget [mask]                            - copy matching files to local
+mput [mask]                            - copy matching files to remote

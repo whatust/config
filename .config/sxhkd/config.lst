@@ -22,4 +22,6 @@ st:~/.local/src/st/config.h
 dwm:~/.local/src/dwm/config.h
 dwmblocks:~/.local/src/dwmblocks/config.h
 sxiv:~/.config/sxiv/exec/key-handler
+cheat:~/.config/cheat/conf.yml
+cheats:~/.config/cheat/
 
