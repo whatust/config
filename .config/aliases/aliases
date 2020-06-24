@@ -40,6 +40,9 @@ alias neomutt='neomutt -F $HOME/.config/mutt/muttrc'
 alias vim='nvim'
 alias monolith='monolith -s -j -f'
 alias tmux='tmux -u'
+alias gotop='gotop -c monokai'
+alias open='xdg-open'
+alias mime='xdg-mime'
 
 # alias bookworm='com.github.babluboy.bookworm'
 
