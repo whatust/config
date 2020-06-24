@@ -181,7 +181,13 @@ let NERDTreeShowHidden=1
 "hi gitmessengerHistory     term=None guibg=#1b2b34 guifg=#c594c5
 
 " Vim Wiki
-let g:vimwiki_list = [{'path': '~/.local/vimwiki/', 'syntax': 'markdown'}]
+let g:vimwiki_list = [{ 'path': '~/.local/vimwiki/', 
+            \ 'template_path': '~/.local/vimwiki/templates/',
+            \ 'path_html': '~/.local/vimwiki/site_html',
+            \ 'template_default': 'default', 
+            \ 'custom_wiki2html': 'vimwiki_markdown',
+            \ 'html_filename_parameterization': 1,
+            \ 'template_ext': '.tpl', 'syntax': 'markdown', 'ext': '.md'}]
 
 """""""""""
 " Hotkeys "
