@@ -1,0 +1,13 @@
+---
+tabs: [ automation, personal ]
+---
+
+# Create playbook folder structure
+ansible-galaxy init [folder_name]
+
+# Run playbook with inventory file
+ansible-playbook -i [inventory_file] [playbook_file]
+
+# To read documentaion on the git module
+ansible-doc git
+

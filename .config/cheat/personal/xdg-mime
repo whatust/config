@@ -1,0 +1,13 @@
+---
+tags: [ personal ]
+---
+
+# To query default program for .jpg
+xdg-mime query default image/jpg
+
+# To query file type
+xdg-mime query filetype path/to/file
+
+# To set a sxiv as default opener to png
+xdg-mime default sxiv.desktop image/png
+

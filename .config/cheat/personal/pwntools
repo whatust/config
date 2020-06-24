@@ -1,0 +1,13 @@
+---
+syntax: python
+tags: [ pentest, personal ]
+---
+
+# Import all
+from pwn import*
+
+# Set context
+context(arch = ['i386'|'x64'], os = 'linux')
+
+# Connect to remove
+[var_name] = remote(['address_to_traget'], [port])
