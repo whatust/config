@@ -1,0 +1,39 @@
+# To detach from tmux:
+Ctrl-a d
+
+# To restore tmux session:
+tmux attach
+
+# To display session:
+tmux ls
+
+# To switch session:
+Ctrl-a s
+
+# To help screen (Q to quit):
+Ctrl-a ?
+
+# To create a window:
+Ctrl-a c
+
+# To change window prev/next:
+Ctrl-a p / Ctrl-a n
+
+# To destroy a pane:
+Ctrl-a x
+
+# To split windows horizontally/vertically:
+Ctrl-a (h,|) / Ctrl-a (v,-)
+
+# To resize panes
+Alt-(a,s,d,f)
+
+# To chage panes
+Ctrl-(a,s,d,f)
+
+# To enter selection mode
+Ctrl-a [
+
+# To change windows
+Alt-(p,n)
+

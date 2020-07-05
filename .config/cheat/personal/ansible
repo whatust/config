@@ -11,3 +11,31 @@ ansible-playbook -i [inventory_file] [playbook_file]
 # To read documentaion on the git module
 ansible-doc git
 
+# To copy file from local to remote
+- name:
+  copy:
+    src:/path/to/the/file
+    dest:/path/to/the/destination
+
+# To add user on the remote
+- name:
+  user:
+    name: username
+
+# To create directory with 755 permission with owner username group group
+- name:
+  file:
+    path: /path/to/directory
+    state: directory
+    mode: '0755'
+    owner: username
+    group: group
+
+# To install using a git, nvim and mpd using apt and run apt update
+- name:
+  apt:
+    name:
+      - git
+      - neovim
+      - mpd
+  update_cache: yes
