@@ -3,7 +3,7 @@ nvimrc:~/.config/nvim/init.vim
 tmux:~/.config/tmux/tmux.conf
 sxhkd:~/.config/sxhkd/sxhkdrc
 termite:~/.config/termite/config
-vifm:~/.config/vifmrc
+vifm:~/.config/vifm/vifmrc
 polybar:~/.config/polybar/config
 aliases:~/.config/aliases/aliases
 bspwm:~/.config/bspwm/bspwmrc
