@@ -28,7 +28,7 @@ super + Escape
 #
 #
 
-super + c
+super + shift + c
     ~/.scripts/misc/indexmenu -s ':' -p ~/.config/sxhkd/config.lst -v "$TERMINAL -e nvim"
 
 super + shift + b
