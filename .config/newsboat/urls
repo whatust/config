@@ -1,7 +1,12 @@
+#Query Feeds
+"query:Youtube:tags # \"Youtube\" and unread = \"yes\""
+"query:Articles:tags # \"Article\" and unread = \"yes\""
+
 # Tech News
-https://www.archlinux.org/feeds/news/ "~Arch Linux" "Linux" "Tech"
-https://gracefulsecurity.com/feed/ "~Graceful Security" "Security" "Tech"
-https://hnrss.org/newest "~Hacker News" "Tech"
+https://www.archlinux.org/feeds/news/ "~Arch Linux" "Article" "Linux" "Tech"
+https://gracefulsecurity.com/feed/ "~Graceful Security" "Article" "Security" "Tech"
+https://hnrss.org/newest "~Hacker News" "Article" "Tech"
+https://genedan.com/feed/ "~Dan Gene" "Article" "Tech"
 
 # News
 

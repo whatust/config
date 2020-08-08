@@ -34,7 +34,9 @@ bind-key K prev article
 # -- Display ----------------------------------------------------------------
 
 show-read-feeds yes
+#feed-sort-order unreadarticlecount-asc
 feed-sort-order unreadarticlecount-asc
+feed-sort-order firsttag-asc
 
 color info color15 default
 color listnormal color7 default bold
