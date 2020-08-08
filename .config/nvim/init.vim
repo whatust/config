@@ -30,6 +30,7 @@ Plug 'arcticicestudio/nord-vim'         " Vim Colorscheme
 Plug 'rhysd/git-messenger.vim'          " Git commit message visualizer
 Plug 'godlygeek/tabular'                " Tab Alignment
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'pangloss/vim-javascript'          " Add syntaxhighlighting to js
 call plug#end()
 filetype plugin indent on
 
@@ -181,13 +182,20 @@ let NERDTreeShowHidden=1
 "hi gitmessengerHistory     term=None guibg=#1b2b34 guifg=#c594c5
 
 " Vim Wiki
+"let g:vimwiki_list = [{ 'path': '~/.local/vimwiki/', 
+"            \ 'template_path': '~/.local/vimwiki/templates/',
+"            \ 'path_html': '~/.local/vimwiki/site_html',
+"            \ 'template_default': 'default', 
+"            \ 'custom_wiki2html': 'vimwiki_markdown',
+"            \ 'html_filename_parameterization': 1,
+"            \ 'template_ext': '.tpl', 'syntax': 'markdown', 'ext': '.md'}]
+
 let g:vimwiki_list = [{ 'path': '~/.local/vimwiki/', 
             \ 'template_path': '~/.local/vimwiki/templates/',
             \ 'path_html': '~/.local/vimwiki/site_html',
             \ 'template_default': 'default', 
-            \ 'custom_wiki2html': 'vimwiki_markdown',
             \ 'html_filename_parameterization': 1,
-            \ 'template_ext': '.tpl', 'syntax': 'markdown', 'ext': '.md'}]
+            \ 'template_ext': '.tpl'}]
 
 """""""""""
 " Hotkeys "
@@ -236,7 +244,7 @@ vmap <C-s> :Tabular /
 " Normal Mode
 
 " Vertical split
-nnoremap <silent> vv <C-w>v
+nnoremap <silent> vv :vs<CR>
 
 " Remove trailing whitespaces
 nmap <F2> :%s/\s\+$//e <CR>
