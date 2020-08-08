@@ -9,5 +9,7 @@
 #bspwm
 
  sxhkd -c ~/.config/sxhkd/dwm_sxhkdrc &
+ flameshot config --filename "screenshot_%F%T" --trayicon false --maincolor #ffffff --contrastcolor #48a8da
+ flameshot &
  dwm
 
