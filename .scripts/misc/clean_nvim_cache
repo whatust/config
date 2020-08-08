@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -f "$HOME/.local/share/nvim/swap/"*".swp"
+
+#vim: set syntax=shell
