@@ -8,7 +8,10 @@ https://gracefulsecurity.com/feed/ "~Graceful Security" "Article" "Security" "Te
 https://hnrss.org/newest "~Hacker News" "Article" "Tech"
 https://genedan.com/feed/ "~Dan Gene" "Article" "Tech"
 
-# News
+# Japanese
+https://www.nhk.or.jp/lesson/common/rss/podcast/english.xml "Japanese" "Podcast"
+https://sokoani.com/feed "Japanese" "Podcast" "Anime"
+https://bilingualnews.libsyn.com/rss "Japanese" "Podcas" "News"
 
 # Youtube Video
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "Youtube" "Tech"

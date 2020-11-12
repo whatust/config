@@ -45,4 +45,6 @@ alias open='xdg-open'
 alias mime='xdg-mime'
 alias bookworm='com.github.babluboy.bookworm'
 
+alias brave_test='brave --allow-file-access-from-files'
+
 
