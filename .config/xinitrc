@@ -1,15 +1,8 @@
 #!/bin/sh
 
-# xinitrc runs at when startx executes
-
 # executes xprofile to start some daemon programs
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile" ] && . "${XDG_CONFIG_HOME:-$HOME/.config}/xprofile"
 
 # start window manager
-#bspwm
-
-~/.screenlayout/./dual_monitor.sh
-xwallpaper --output DVI-I-1 --zoom ~/Images/Wallpapers/vertical/Dark_Souls-0001.png --output HDMI-1 --zoom ~/Images/Wallpapers/horizontal/Dark_Souls-0000.png
-
 dwm
 
