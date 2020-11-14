@@ -1,16 +1,16 @@
-# conf.yml:
-#  ...
-
+---
+editor: vim
 colorize: true
-style: native
-
+style: monokai
+formatter: terminal16m
+pager: less -FRX
 cheatpaths:
-    - name: community
-      path: /usr/share/cheat/cheatsheets/community
-      tags: [community]
-      readonly: true
-
-    - name: personal
-      path: ~/.config/cheat/personal
-      tags: [ personal ]
+  - name: community
+    path: /home/whatust/.config/cheat/cheatsheets/community
+    tags: [ community ]
+    readonly: true
+  - name: personal
+    path: /home/whatust/.config/cheat/cheatsheets/personal
+    tags: [ personal ]
+    readonly: false
 

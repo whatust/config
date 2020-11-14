@@ -1,6 +1,6 @@
 # Python3 aliases
 alias python=python3
-alias pip=pip3
+#alias pip=pip3
 
 alias vifm=runvifm
 #alias vim=nvim
