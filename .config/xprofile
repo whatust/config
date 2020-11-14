@@ -1,8 +1,10 @@
 #!/bin/sh
 
 mpd &
+dunst &
+sxhkd -c ~/.config/sxhkd/dwm_sxhkdrc &
 picom --config $HOME/.config/picom/picom.conf &
 xsetroot -cursor_name left_ptr &
-xwallpaper --zoom ~/Images/wallpapers/horizontal/polygon.jpg &
-dunst &
-
+ flameshot config --filename "screenshot_%F%T" --trayicon false --maincolor #ffffff --contrastcolor #48a8da
+ flameshot &
+ 
