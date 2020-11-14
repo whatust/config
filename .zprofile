@@ -26,6 +26,7 @@ export PATH="$PATH:$HOME/.scripts"
 export PATH="$PATH:$HOME/.scripts/i3"
 export PATH="$PATH:$HOME/.scripts/dwm"
 export PATH="$PATH:$HOME/.scripts/misc"
+export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.gem/ruby/2.7.0/bin"
 
