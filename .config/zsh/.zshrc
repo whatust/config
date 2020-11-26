@@ -24,7 +24,9 @@ _comp_options+=(globdots)		# Include hidden files.
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
-bindkey '^R' history-beginning-search-backward
+bindkey '^R' history-incremental-search-backward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -48,10 +50,13 @@ export LESS_TERMCAP_ue=$(tput sgr0)                # reset underline
 # Adding autocomplete to cheat
 fpath=(~/.config/zsh/ $fpath)
 
+powerline-daemon -q
+. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+
 # Spaceship config
 SPACESHIP_PROMPT_ORDER=( user host dir hg char )
 
-SPACESHIP_RPROMPT_ORDER=( git jobs )
+SPACESHIP_RPROMPT_ORDER=( git jobs vi_mode )
 
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=false
@@ -61,10 +66,6 @@ SPACESHIP_CHAR_SYMBOL_ROOT="# "
 SPACESHIP_CHAR_COLOR_SUCCESS="10"
 SPACESHIP_CHAR_COLOR_FAILURE="9"
 SPACESHIP_TIME_SHOW=true
-#SPACESHIP_TIME_COLOR="green"
-#SPACESHIP_TIME_PREFIX=""
-#SPACESHIP_TIME_SUFFIX=""
-#SPACESHIP_TIME_12HR=true
 SPACESHIP_USER_SHOW=always
 SPACESHIP_USER_PREFIX=""
 SPACESHIP_USER_SUFFIX=""
@@ -79,18 +80,21 @@ SPACESHIP_DIR_SUFFIX=""
 SPACESHIP_DIR_TRUNC=3
 SPACESHIP_DIR_TRUNC_PREFIX="-"
 SPACESHIP_DIR_COLOR="11"
-SPACESHIP_GIT_SHOW=false
-SPACESHIP_DIR_TRUNC_REPO=true
+SPACESHIP_GIT_SHOW=true
 SPACESHIP_GIT_BRANCH_COLOR="13"
 SPACESHIP_GIT_STATUS_COLOR="9"
-#SPACESHIP_EXEC_TIME_SHOW=true
-#SPACESHIP_EXEC_TIME_PREFIX="("
-#SPACESHIP_EXEC_TIME_SUFFIX=") "
-#SPACESHIP_EXEC_TIME_COLOR="blue"
+SPACESHIP_GIT_SYMBOL=""
+SPACESHIP_GIT_STATUS_DELETED="x"
+SPACESHIP_GIT_STATUS_AHEAD="^"
+SPACESHIP_GIT_STATUS_BEHIND="v"
+SPACESHIP_GIT_STATUS_DIVERGED="\\"
+SPACESHIP_DIR_TRUNC_REPO=true
 SPACESHIP_JOBS_SHOW=true
 SPACESHIP_JOBS_PREFIX=""
 SPACESHIP_JOBS_SUFFIX=""
 SPACESHIP_JOBS_COLOR="12"
+SPACESHIP_JOBS_SYMBOL="+"
+SPACESHIP_VI_MODE_SHOW=true
 
 export LS_COLORS="rs=0:di=01;94:ln=01;95:mh=00:pi=40;33:so=01;91:do=01;91:bd=40;33;01:cd=40;33;01:or=40;93;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;92:*.tar=01;93:*.tgz=01;93:*.arc=01;93:*.arj=01;93:*.taz=01;93:*.lha=01;93:*.lz4=01;93:*.lzh=01;93:*.lzma=01;93:*.tlz=01;93:*.txz=01;93:*.tzo=01;93:*.t7z=01;93:*.zip=01;93:*.z=01;93:*.dz=01;93:*.gz=01;93:*.lrz=01;93:*.lz=01;93:*.lzo=01;93:*.xz=01;93:*.zst=01;93:*.tzst=01;93:*.bz2=01;93:*.bz=01;93:*.tbz=01;93:*.tbz2=01;93:*.tz=01;93:*.deb=01;93:*.rpm=01;93:*.jar=01;93:*.war=01;93:*.ear=01;93:*.sar=01;93:*.rar=01;93:*.alz=01;93:*.ace=01;93:*.zoo=01;93:*.cpio=01;93:*.7z=01;93:*.rz=01;93:*.cab=01;93:*.wim=01;93:*.swm=01;93:*.dwm=01;93:*.esd=01;93:*.jpg=01;91:*.jpeg=01;91:*.mjpg=01;91:*.mjpeg=01;91:*.gif=01;91:*.bmp=01;91:*.pbm=01;91:*.pgm=01;91:*.ppm=01;91:*.tga=01;91:*.xbm=01;91:*.xpm=01;91:*.tif=01;91:*.tiff=01;91:*.png=01;91:*.svg=01;91:*.svgz=01;91:*.mng=01;91:*.pcx=01;91:*.mov=01;91:*.mpg=01;91:*.mpeg=01;91:*.m2v=01;91:*.mkv=01;91:*.webm=01;91:*.webp=01;91:*.ogm=01;91:*.mp4=01;91:*.m4v=01;91:*.mp4v=01;91:*.vob=01;91:*.qt=01;91:*.nuv=01;91:*.wmv=01;91:*.asf=01;91:*.rm=01;91:*.rmvb=01;91:*.flc=01;91:*.avi=01;91:*.fli=01;91:*.flv=01;91:*.gl=01;91:*.dl=01;91:*.xcf=01;91:*.xwd=01;91:*.yuv=01;91:*.cgm=01;91:*.emf=01;91:*.ogv=01;91:*.ogx=01;91:*.aac=00;96:*.au=00;96:*.flac=00;96:*.m4a=00;96:*.mid=00;96:*.midi=00;96:*.mka=00;96:*.mp3=00;96:*.mpc=00;96:*.ogg=00;96:*.ra=00;96:*.wav=00;96:*.oga=00;96:*.opus=00;96:*.spx=00;96:*.xspf=00;96:"
 
