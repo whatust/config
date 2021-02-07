@@ -30,7 +30,8 @@ Plug 'arcticicestudio/nord-vim'         " Vim Colorscheme
 Plug 'rhysd/git-messenger.vim'          " Git commit message visualizer
 Plug 'godlygeek/tabular'                " Tab Alignment
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'pangloss/vim-javascript'          " Add syntaxhighlighting to js
+Plug 'pangloss/vim-javascript'          " Adds syntaxhighlighting to js
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } "Adds support for golang
 call plug#end()
 filetype plugin indent on
 
@@ -284,9 +285,9 @@ imap kJ <Esc>
 imap KJ <Esc>
 
 " coc Completion
-inoremap <silent><expr> <TAB>
+inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<C-TAB>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
 function! s:check_back_space() abort
