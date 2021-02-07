@@ -7,5 +7,6 @@ picom --config $HOME/.config/picom/picom.conf &
 xsetroot -cursor_name left_ptr &
 flameshot config --filename "screenshot_%F%T" --trayicon false --maincolor #ffffff --contrastcolor #48a8da
 flameshot &
+fcitx5 -d &
 
 ~/.screenlayout/./dual_monitor.sh
