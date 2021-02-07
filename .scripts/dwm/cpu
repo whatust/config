@@ -4,7 +4,7 @@ case $BLOCK_BUTTON in
     2) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-usage=$(mpstat | awk -F " " '/all/ {print 100 - $12"%"}')
+usage=$(mpstat | awk -F " " '/all/ {print 100 - $NF"%"}')
 temp=$(sensors 2> /dev/null | awk '/Core 0/ {print $3}')
 temp=${temp#+}
 
