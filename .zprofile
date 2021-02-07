@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export SDL_IM_MODULE='fcitx'
+export XMODIFIERS='@im=fcitx'
+export LANG=en_US.UTF-8
+
 export EDITOR="nvim"
 export BROWSER="firefox"
 export TERMINAL="st"
@@ -15,6 +21,8 @@ export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+export _JAVA_AWT_WM_NONREPARENTING=1 # Fix android studio startup
+export LESSHISTFILE="${XDG_CONFIG_HOME:-$HOME/.config}/lesshst" # Change less historynfile
 
 export PATH="/bin"
 export PATH="$PATH:/sbin"
