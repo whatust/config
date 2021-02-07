@@ -23,6 +23,7 @@ _comp_options+=(globdots)		# Include hidden files.
 
 # vi mode
 bindkey -v
+bindkey kj vi-cmd-mode
 export KEYTIMEOUT=1
 bindkey '^R' history-incremental-search-backward
 bindkey '^P' history-search-backward
@@ -51,7 +52,7 @@ export LESS_TERMCAP_ue=$(tput sgr0)                # reset underline
 fpath=(~/.config/zsh/ $fpath)
 
 powerline-daemon -q
-. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+. /usr/lib/python3.9/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Spaceship config
 SPACESHIP_PROMPT_ORDER=( user host dir hg char )
